@@ -186,43 +186,47 @@ export default function Home() {
               AI-Powered Health Analysis
             </div>
 
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-tight">
-              Predict Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Heart Health</span> with Precision
+            <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white mb-4">
+              CardioPredict AI
             </h1>
 
-            <p className="text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
-              Advanced machine learning algorithm trained on 70,000+ patient records to provide accurate cardiovascular risk assessments in seconds.
+            <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto font-medium">
+              Advanced cardiovascular disease risk assessment powered by machine learning
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+            <p className="text-base text-blue-200 max-w-2xl mx-auto pb-8 leading-relaxed">
+              Our AI model analyzes multiple health factors to provide accurate cardiovascular disease risk predictions, helping healthcare professionals make informed decisions.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pb-16">
               <button
                 onClick={scrollToPrediction}
-                className="group relative px-8 py-4 bg-blue-600 text-white rounded-full font-bold text-lg hover:bg-blue-500 transition-all shadow-lg hover:shadow-blue-500/25 flex items-center justify-center gap-2"
+                className="group px-8 py-3 bg-white text-[#1a44c9] rounded-lg font-bold text-lg hover:bg-gray-50 transition-all shadow-lg flex items-center gap-2"
               >
-                Start Assessment
+                Get Prediction
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
-              <button className="px-8 py-4 bg-slate-800 text-white border border-slate-700 rounded-full font-bold text-lg hover:bg-slate-700 transition-all">
-                View Research
+              <button className="px-8 py-3 bg-[#2a55da] text-white border border-[#4a75f5] rounded-lg font-bold text-lg hover:bg-[#3a65ea] transition-all">
+                Learn More
               </button>
             </div>
 
-            <div className="grid grid-cols-3 gap-8 pt-12 border-t border-slate-800 mt-12">
-              <div className="text-center">
-                <div className="text-4xl font-bold text-white mb-1">
-                  {detailedMetrics ? (detailedMetrics.accuracy * 100).toFixed(1) : "73.97"}%
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16 pt-8 max-w-4xl mx-auto">
+              <div>
+                <div className="text-4xl md:text-5xl font-bold text-white mb-2">
+                  {detailedMetrics ? (detailedMetrics.accuracy * 100).toFixed(2) : "72.60"}%
                 </div>
-                <div className="text-sm font-medium text-slate-400 uppercase tracking-wider">Accuracy</div>
+                <div className="text-xs md:text-sm font-bold text-blue-200 uppercase tracking-widest">Accuracy</div>
               </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold text-white mb-1">70K+</div>
-                <div className="text-sm font-medium text-slate-400 uppercase tracking-wider">Patient Records</div>
+              <div>
+                <div className="text-4xl md:text-5xl font-bold text-white mb-2">70K</div>
+                <div className="text-xs md:text-sm font-bold text-blue-200 uppercase tracking-widest">Data Points</div>
               </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold text-white mb-1">
-                  {detailedMetrics ? detailedMetrics.roc_auc.toFixed(3) : "0.805"}
+              <div>
+                <div className="text-4xl md:text-5xl font-bold text-white mb-2">
+                  {detailedMetrics ? detailedMetrics.roc_auc.toFixed(3) : "0.789"}
                 </div>
-                <div className="text-sm font-medium text-slate-400 uppercase tracking-wider">ROC-AUC Score</div>
+                <div className="text-xs md:text-sm font-bold text-blue-200 uppercase tracking-widest">ROC-AUC</div>
               </div>
             </div>
           </div>
@@ -423,7 +427,7 @@ export default function Home() {
       <section id="prediction-form" className="py-20 bg-blue-50">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
-            <div className="bg-blue-600 p-6 text-white text-center">
+            <div className="bg-[#1a44c9] p-8 text-white text-center">
               <h2 className="text-2xl font-bold">Get Your Prediction</h2>
               <p className="text-blue-100">
                 Enter your health metrics below for an instant assessment
@@ -662,7 +666,7 @@ export default function Home() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full relative group overflow-hidden py-4 px-6 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-bold rounded-xl shadow-lg hover:shadow-blue-500/30 transition-all transform hover:-translate-y-0.5"
+                  className="w-full relative group overflow-hidden py-4 px-6 bg-[#1a44c9] hover:bg-[#2a55da] text-white font-bold rounded-xl shadow-lg hover:shadow-blue-500/30 transition-all transform hover:-translate-y-0.5"
                 >
                   <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
                   {loading ? (
