@@ -173,7 +173,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white text-gray-900">
       {/* Hero Section */}
-      <section className="relative w-full bg-[#1a44c9] pt-32 pb-20 lg:pt-40 lg:pb-32 text-center">
+      <section className="relative w-full bg-gradient-to-br from-[#1a44c9] to-[#122e86] pt-32 pb-20 lg:pt-40 lg:pb-32 text-center">
         {/* Background effects removed for flat royal blue theme */}
 
         <div className="container relative mx-auto px-4 md:px-8 max-w-6xl">
@@ -424,10 +424,10 @@ export default function Home() {
       </section>
 
       {/* Prediction Form Section */}
-      <section id="prediction-form" className="py-20 bg-blue-50">
+      <section id="prediction-form" className="py-20 bg-gradient-to-b from-blue-50 to-white">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
-            <div className="bg-[#1a44c9] p-8 text-white text-center">
+            <div className="bg-gradient-to-r from-[#1a44c9] to-[#122e86] p-8 text-white text-center">
               <h2 className="text-2xl font-bold">Get Your Prediction</h2>
               <p className="text-blue-100">
                 Enter your health metrics below for an instant assessment
@@ -666,7 +666,7 @@ export default function Home() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full relative group overflow-hidden py-4 px-6 bg-[#1a44c9] hover:bg-[#2a55da] text-white font-bold rounded-xl shadow-lg hover:shadow-blue-500/30 transition-all transform hover:-translate-y-0.5"
+                  className="w-full relative group overflow-hidden py-4 px-6 bg-gradient-to-r from-[#1a44c9] to-[#122e86] hover:from-[#2a55da] hover:to-[#1a44c9] text-white font-bold rounded-xl shadow-lg hover:shadow-blue-500/30 transition-all transform hover:-translate-y-0.5"
                 >
                   <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
                   {loading ? (
