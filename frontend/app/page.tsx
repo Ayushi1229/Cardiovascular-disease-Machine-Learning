@@ -171,9 +171,9 @@ export default function Home() {
     ];
 
   return (
-    <main className="min-h-screen bg-white text-gray-900">
+    <main className="min-h-screen bg-gradient-to-br from-[#1a44c9] via-[#1636a0] to-[#0f256e] text-white selection:bg-blue-500 selection:text-white">
       {/* Hero Section */}
-      <section className="relative w-full bg-gradient-to-br from-[#1a44c9] to-[#122e86] pt-32 pb-20 lg:pt-40 lg:pb-32 text-center">
+      <section className="relative w-full pt-32 pb-20 lg:pt-40 lg:pb-32 text-center">
         {/* Background effects removed for flat royal blue theme */}
 
         <div className="container relative mx-auto px-4 md:px-8 max-w-6xl">
@@ -234,16 +234,16 @@ export default function Home() {
       </section>
 
       {/* Medical Disclaimer */}
-      <section className="w-full bg-amber-50 border-b border-amber-200 py-8 md:py-12">
+      <section className="w-full bg-white/5 backdrop-blur-md border-b border-white/10 py-8 md:py-12">
         <div className="container mx-auto px-4 md:px-8 max-w-6xl">
-          <div className="flex gap-4 max-w-4xl mx-auto">
-            <AlertTriangle className="w-6 h-6 text-amber-700 shrink-0 mt-1" />
+          <div className="flex gap-4 max-w-4xl mx-auto items-center justify-center">
+            <AlertTriangle className="w-6 h-6 text-amber-400 shrink-0" />
             <div className="space-y-2">
-              <h3 className="font-bold text-amber-800 text-lg">Medical Disclaimer</h3>
-              <p className="text-amber-700 text-sm">
+              <h3 className="font-bold text-white text-lg">Medical Disclaimer</h3>
+              <p className="text-blue-100 text-sm">
                 This AI model is for <strong>educational purposes only</strong>. It should NOT replace professional medical advice.
               </p>
-              <ul className="text-amber-700 text-sm list-disc list-inside space-y-1">
+              <ul className="text-blue-200 text-sm list-disc list-inside space-y-1">
                 <li>Always consult qualified healthcare providers</li>
                 <li>Results must be validated by medical professionals</li>
                 <li>This is an academic ML/DL project</li>
@@ -254,11 +254,11 @@ export default function Home() {
       </section>
 
       {/* Model Information */}
-      <section className="w-full bg-gray-50 py-16 md:py-24">
+      <section className="w-full py-16 md:py-24">
         <div className="container mx-auto px-4 md:px-8 max-w-6xl">
           <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Model Information</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Model Information</h2>
+            <p className="text-blue-100 max-w-2xl mx-auto">
               Built with scikit-learn, trained on the Kaggle Cardiovascular Disease dataset
             </p>
           </div>
@@ -371,14 +371,13 @@ export default function Home() {
         </div>
       </section> */}
 
-      {/* How It Works */}
-      <section className="py-20 bg-white">
+      <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold mb-4 text-gray-900">
+            <h2 className="text-3xl font-bold mb-4 text-white">
               How It Works
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-blue-100 max-w-2xl mx-auto">
               Prediction Workflow. Our model follows a rigorous 4-step process
               to deliver accurate cardiovascular disease risk assessments.
             </p>
@@ -408,13 +407,13 @@ export default function Home() {
               },
             ].map((item, i) => (
               <div key={i} className="relative">
-                <div className="text-6xl font-bold text-gray-100 absolute -top-8 -left-4 -z-10">
+                <div className="text-6xl font-bold text-white/10 absolute -top-8 -left-4 -z-10">
                   {item.step}
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-gray-900">
+                <h3 className="text-xl font-bold mb-3 text-white">
                   {item.title}
                 </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
+                <p className="text-blue-100 text-sm leading-relaxed">
                   {item.desc}
                 </p>
               </div>
@@ -424,12 +423,12 @@ export default function Home() {
       </section>
 
       {/* Prediction Form Section */}
-      <section id="prediction-form" className="py-20 bg-gradient-to-b from-blue-50 to-white">
+      <section id="prediction-form" className="py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
-            <div className="bg-gradient-to-r from-[#1a44c9] to-[#122e86] p-8 text-white text-center">
+            <div className="bg-white border-b border-gray-100 p-8 text-center text-[#1a44c9]">
               <h2 className="text-2xl font-bold">Get Your Prediction</h2>
-              <p className="text-blue-100">
+              <p className="text-blue-600/80 mt-2">
                 Enter your health metrics below for an instant assessment
               </p>
             </div>
