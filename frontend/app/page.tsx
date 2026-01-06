@@ -97,8 +97,8 @@ export default function Home() {
         formData.cholesterol === "Low"
           ? 1
           : formData.cholesterol === "Normal"
-          ? 2
-          : 3,
+            ? 2
+            : 3,
       glucose:
         formData.glucose === "Low" ? 1 : formData.glucose === "Normal" ? 2 : 3,
       smoke: formData.smoke === "No" ? 0 : 1,
@@ -153,22 +153,22 @@ export default function Home() {
 
   const featureImportance = detailedMetrics?.feature_importance
     ? detailedMetrics.feature_importance.map((item: any) => ({
-        name: item.name,
-        value: parseFloat((item.value * 100).toFixed(1)),
-      }))
+      name: item.name,
+      value: parseFloat((item.value * 100).toFixed(1)),
+    }))
     : [
-        { name: "Systolic BP", value: 24.7 },
-        { name: "Diastolic BP", value: 14 },
-        { name: "Age", value: 14 },
-        { name: "Cholesterol", value: 12 },
-        { name: "Glucose", value: 10 },
-        { name: "Weight", value: 8 },
-        { name: "Active", value: 7 },
-        { name: "Smoke", value: 5 },
-        { name: "Alcohol", value: 3 },
-        { name: "Gender", value: 2 },
-        { name: "Height", value: 0.3 },
-      ];
+      { name: "Systolic BP", value: 24.7 },
+      { name: "Diastolic BP", value: 14 },
+      { name: "Age", value: 14 },
+      { name: "Cholesterol", value: 12 },
+      { name: "Glucose", value: 10 },
+      { name: "Weight", value: 8 },
+      { name: "Active", value: 7 },
+      { name: "Smoke", value: 5 },
+      { name: "Alcohol", value: 3 },
+      { name: "Gender", value: 2 },
+      { name: "Height", value: 0.3 },
+    ];
 
   return (
     <main className="min-h-screen bg-white text-gray-900">
@@ -185,7 +185,7 @@ export default function Home() {
             <p className="text-base md:text-lg text-blue-200 max-w-2xl mx-auto">
               Trained on 70K patient records using CatBoost classifier with 73.97% accuracy
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
               <button
                 onClick={scrollToPrediction}
@@ -258,7 +258,7 @@ export default function Home() {
               <h3 className="font-bold text-gray-900 mb-2">ML Algorithm</h3>
               <p className="text-gray-600 text-sm">CatBoost classifier with optimal hyperparameters</p>
             </div>
-            
+
             <div className="bg-white p-6 rounded-lg border border-gray-200 hover:shadow-lg transition-shadow">
               <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
                 <Database className="w-6 h-6 text-green-600" />
@@ -266,7 +266,7 @@ export default function Home() {
               <h3 className="font-bold text-gray-900 mb-2">Dataset</h3>
               <p className="text-gray-600 text-sm">70,000 patient records from Kaggle</p>
             </div>
-            
+
             <div className="bg-white p-6 rounded-lg border border-gray-200 hover:shadow-lg transition-shadow">
               <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
                 <Shield className="w-6 h-6 text-purple-600" />
@@ -274,7 +274,7 @@ export default function Home() {
               <h3 className="font-bold text-gray-900 mb-2">Performance</h3>
               <p className="text-gray-600 text-sm">73.97% accuracy with rigorous validation</p>
             </div>
-            
+
             <div className="bg-white p-6 rounded-lg border border-gray-200 hover:shadow-lg transition-shadow">
               <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
                 <Zap className="w-6 h-6 text-orange-600" />
@@ -321,7 +321,7 @@ export default function Home() {
               <h2 className="text-2xl md:text-3xl font-bold">Get Your Prediction</h2>
               <p className="text-blue-100 mt-2">Enter your health metrics for instant assessment</p>
             </div>
-            
+
             <div className="p-6 md:p-8">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -550,11 +550,10 @@ export default function Home() {
               )}
 
               {result && (
-                <div className={`mt-8 p-6 rounded-lg text-center border-2 ${
-                  result.prediction === 1
+                <div className={`mt-8 p-6 rounded-lg text-center border-2 ${result.prediction === 1
                     ? "bg-red-50 border-red-200"
                     : "bg-green-50 border-green-200"
-                }`}>
+                  }`}>
                   <div className="flex justify-center mb-4">
                     {result.prediction === 1 ? (
                       <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center">
@@ -566,19 +565,16 @@ export default function Home() {
                       </div>
                     )}
                   </div>
-                  <h3 className={`text-2xl font-bold mb-2 ${
-                    result.prediction === 1 ? "text-red-800" : "text-green-800"
-                  }`}>
+                  <h3 className={`text-2xl font-bold mb-2 ${result.prediction === 1 ? "text-red-800" : "text-green-800"
+                    }`}>
                     {result.risk} Risk
                   </h3>
-                  <p className={`text-lg font-semibold ${
-                    result.prediction === 1 ? "text-red-700" : "text-green-700"
-                  }`}>
+                  <p className={`text-lg font-semibold ${result.prediction === 1 ? "text-red-700" : "text-green-700"
+                    }`}>
                     Probability: {(result.probability * 100).toFixed(1)}%
                   </p>
-                  <p className={`text-sm mt-3 ${
-                    result.prediction === 1 ? "text-red-600" : "text-green-600"
-                  }`}>
+                  <p className={`text-sm mt-3 ${result.prediction === 1 ? "text-red-600" : "text-green-600"
+                    }`}>
                     {result.prediction === 1
                       ? "Higher cardiovascular risk detected. Consult a healthcare professional."
                       : "Lower cardiovascular risk. Maintain a healthy lifestyle."}
@@ -981,11 +977,10 @@ export default function Home() {
 
               {result && (
                 <div
-                  className={`mt-8 p-6 rounded-xl text-center border-2 ${
-                    result.prediction === 1
-                      ? "bg-red-50 border-red-200 text-red-800"
-                      : "bg-green-50 border-green-200 text-green-800"
-                  }`}
+                  className={`mt-8 p-6 rounded-xl text-center border-2 ${result.prediction === 1
+                    ? "bg-red-50 border-red-200 text-red-800"
+                    : "bg-green-50 border-green-200 text-green-800"
+                    }`}
                 >
                   <div className="flex justify-center mb-4">
                     {result.prediction === 1 ? (
@@ -1179,9 +1174,9 @@ export default function Home() {
                 Total Predictions:{" "}
                 {detailedMetrics
                   ? detailedMetrics.confusion_matrix.tn +
-                    detailedMetrics.confusion_matrix.fp +
-                    detailedMetrics.confusion_matrix.fn +
-                    detailedMetrics.confusion_matrix.tp
+                  detailedMetrics.confusion_matrix.fp +
+                  detailedMetrics.confusion_matrix.fn +
+                  detailedMetrics.confusion_matrix.tp
                   : "14,000"}{" "}
                 | Accuracy:{" "}
                 {detailedMetrics
