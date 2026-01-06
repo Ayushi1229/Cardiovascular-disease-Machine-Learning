@@ -171,71 +171,49 @@ export default function Home() {
       ];
 
   return (
-    <main className="min-h-screen bg-gray-50 text-gray-900 font-sans">
+    <main className="min-h-screen bg-white text-gray-900">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 text-white py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 bg-blue-800/50 border border-blue-700 rounded-full px-4 py-1 mb-6">
-              <span className="relative flex h-3 w-3">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
-              </span>
-              <span className="text-sm font-medium text-blue-100">
-                AI Model Online
-              </span>
-            </div>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 tracking-tight">
+      <section className="w-full bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20 md:py-32">
+        <div className="container mx-auto px-4 md:px-8 max-w-6xl">
+          <div className="text-center space-y-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
               CardioPredict AI
             </h1>
-            <p className="text-xl md:text-2xl text-blue-100 mb-10 max-w-2xl mx-auto leading-relaxed">
-              Advanced cardiovascular disease risk assessment powered by machine
-              learning
+            <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto">
+              Advanced cardiovascular disease risk assessment powered by machine learning
             </p>
-            <p className="text-lg text-blue-200 mb-12 max-w-3xl mx-auto">
-              Our AI model analyzes multiple health factors to provide accurate
-              cardiovascular disease risk predictions, helping healthcare
-              professionals make informed decisions.
+            <p className="text-base md:text-lg text-blue-200 max-w-2xl mx-auto">
+              Trained on 70K patient records using CatBoost classifier with 73.97% accuracy
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
               <button
                 onClick={scrollToPrediction}
-                className="px-8 py-4 bg-white text-blue-900 rounded-lg font-bold text-lg hover:bg-blue-50 transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
+                className="px-8 py-3 bg-white text-blue-600 rounded-lg font-semibold hover:bg-gray-100 transition-all"
               >
-                Get Prediction <ArrowRight className="w-5 h-5" />
+                Get Prediction
               </button>
-              <button className="px-8 py-4 bg-blue-800/50 border border-blue-700 text-white rounded-lg font-bold text-lg hover:bg-blue-800 transition-all flex items-center justify-center gap-2">
+              <button className="px-8 py-3 bg-blue-700 border-2 border-white text-white rounded-lg font-semibold hover:bg-blue-900 transition-all">
                 Learn More
               </button>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto border-t border-blue-800/50 pt-12">
+            <div className="grid grid-cols-3 gap-4 md:gap-8 pt-8 border-t border-blue-400 mt-8">
               <div className="text-center">
-                <div className="text-4xl font-bold mb-1">
-                  {detailedMetrics
-                    ? (detailedMetrics.accuracy * 100).toFixed(2) + "%"
-                    : "73.97%"}
+                <div className="text-3xl md:text-4xl font-bold">
+                  {detailedMetrics ? (detailedMetrics.accuracy * 100).toFixed(1) : "73.97"}%
                 </div>
-                <div className="text-blue-300 text-sm uppercase tracking-wider">
-                  Accuracy
-                </div>
-              </div>
-              <div className="text-center border-l border-r border-blue-800/50">
-                <div className="text-4xl font-bold mb-1">70K</div>
-                <div className="text-blue-300 text-sm uppercase tracking-wider">
-                  Data Points
-                </div>
+                <div className="text-sm md:text-base text-blue-200 mt-2">Accuracy</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-bold mb-1">
-                  {detailedMetrics
-                    ? detailedMetrics.roc_auc.toFixed(3)
-                    : "0.805"}
+                <div className="text-3xl md:text-4xl font-bold">70K</div>
+                <div className="text-sm md:text-base text-blue-200 mt-2">Samples</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl md:text-4xl font-bold">
+                  {detailedMetrics ? detailedMetrics.roc_auc.toFixed(3) : "0.805"}
                 </div>
-                <div className="text-blue-300 text-sm uppercase tracking-wider">
-                  ROC-AUC
-                </div>
+                <div className="text-sm md:text-base text-blue-200 mt-2">ROC-AUC</div>
               </div>
             </div>
           </div>
@@ -243,100 +221,66 @@ export default function Home() {
       </section>
 
       {/* Medical Disclaimer */}
-      <section className="bg-amber-50 border-b border-amber-100">
-        <div className="container mx-auto px-4 py-6">
-          <div className="flex items-start gap-4 max-w-4xl mx-auto">
-            <AlertTriangle className="w-6 h-6 text-amber-600 shrink-0 mt-1" />
-            <div>
-              <h3 className="font-bold text-amber-800 mb-1">
-                Medical Disclaimer
-              </h3>
-              <p className="text-amber-700 text-sm mb-2">
-                Important: This AI model is designed for educational and
-                research purposes only. It should NOT be used as a substitute
-                for professional medical advice, diagnosis, or treatment.
+      <section className="w-full bg-amber-50 border-b border-amber-200 py-8 md:py-12">
+        <div className="container mx-auto px-4 md:px-8 max-w-6xl">
+          <div className="flex gap-4 max-w-4xl mx-auto">
+            <AlertTriangle className="w-6 h-6 text-amber-700 shrink-0 mt-1" />
+            <div className="space-y-2">
+              <h3 className="font-bold text-amber-800 text-lg">Medical Disclaimer</h3>
+              <p className="text-amber-700 text-sm">
+                This AI model is for <strong>educational purposes only</strong>. It should NOT replace professional medical advice.
               </p>
               <ul className="text-amber-700 text-sm list-disc list-inside space-y-1">
-                <li>Always seek the advice of qualified healthcare providers</li>
-                <li>
-                  Never disregard professional medical advice based on this
-                  prediction
-                </li>
-                <li>This tool is part of an ML/DL academic project</li>
-                <li>Results should be validated by medical professionals</li>
+                <li>Always consult qualified healthcare providers</li>
+                <li>Results must be validated by medical professionals</li>
+                <li>This is an academic ML/DL project</li>
               </ul>
-              <p className="text-amber-700 text-xs mt-2 italic">
-                By using this tool, you acknowledge that you understand and
-                accept these limitations.
-              </p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Model Information */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold mb-4 text-gray-900">
-              Model Information
-            </h2>
+      <section className="w-full bg-gray-50 py-16 md:py-24">
+        <div className="container mx-auto px-4 md:px-8 max-w-6xl">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Model Information</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Powered by Advanced Machine Learning. Our prediction model
-              leverages well-established machine learning algorithms from
-              scikit-learn as part of an academic ML/DL project.
+              Built with scikit-learn, trained on the Kaggle Cardiovascular Disease dataset
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="p-6 bg-gray-50 rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+            <div className="bg-white p-6 rounded-lg border border-gray-200 hover:shadow-lg transition-shadow">
               <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                 <Cpu className="w-6 h-6 text-blue-600" />
               </div>
-              <h3 className="font-bold text-lg mb-2 text-gray-900">
-                Sklearn-Based ML Model
-              </h3>
-              <p className="text-gray-600 text-sm">
-                Built using proven machine learning algorithms from
-                scikit-learn, focusing on proper feature engineering and
-                evaluation.
-              </p>
+              <h3 className="font-bold text-gray-900 mb-2">ML Algorithm</h3>
+              <p className="text-gray-600 text-sm">CatBoost classifier with optimal hyperparameters</p>
             </div>
-            <div className="p-6 bg-gray-50 rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
+            
+            <div className="bg-white p-6 rounded-lg border border-gray-200 hover:shadow-lg transition-shadow">
               <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
                 <Database className="w-6 h-6 text-green-600" />
               </div>
-              <h3 className="font-bold text-lg mb-2 text-gray-900">
-                Kaggle Cardiovascular Dataset
-              </h3>
-              <p className="text-gray-600 text-sm">
-                Trained on 70,000 patient records from the Cardiovascular
-                Disease Dataset, ensuring reliable learning.
-              </p>
+              <h3 className="font-bold text-gray-900 mb-2">Dataset</h3>
+              <p className="text-gray-600 text-sm">70,000 patient records from Kaggle</p>
             </div>
-            <div className="p-6 bg-gray-50 rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
+            
+            <div className="bg-white p-6 rounded-lg border border-gray-200 hover:shadow-lg transition-shadow">
               <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
                 <Shield className="w-6 h-6 text-purple-600" />
               </div>
-              <h3 className="font-bold text-lg mb-2 text-gray-900">
-                Reliable Performance
-              </h3>
-              <p className="text-gray-600 text-sm">
-                Achieves strong predictive performance with high accuracy and
-                ROC-AUC score, validated through systematic testing.
-              </p>
+              <h3 className="font-bold text-gray-900 mb-2">Performance</h3>
+              <p className="text-gray-600 text-sm">73.97% accuracy with rigorous validation</p>
             </div>
-            <div className="p-6 bg-gray-50 rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
+            
+            <div className="bg-white p-6 rounded-lg border border-gray-200 hover:shadow-lg transition-shadow">
               <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
                 <Zap className="w-6 h-6 text-orange-600" />
               </div>
-              <h3 className="font-bold text-lg mb-2 text-gray-900">
-                Real-time Inference
-              </h3>
-              <p className="text-gray-600 text-sm">
-                Fast cardiovascular risk prediction using optimized sklearn
-                pipelines integrated with a real-time backend API.
-              </p>
+              <h3 className="font-bold text-gray-900 mb-2">Real-time</h3>
+              <p className="text-gray-600 text-sm">Instant cardiovascular risk prediction</p>
             </div>
           </div>
         </div>
