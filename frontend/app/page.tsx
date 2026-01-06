@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import DarkModeToggle from "./components/DarkModeToggle";
 import {
   BarChart,
   Bar,
@@ -41,7 +40,7 @@ export default function Home() {
     smoke: "No",
     alco: "No",
     active: "Active",
-    model_name: "CatBoost",
+    model_name: "XGBoost",
   });
 
   const [result, setResult] = useState<any>(null);
@@ -172,10 +171,9 @@ export default function Home() {
       ];
 
   return (
-    <main className="min-h-screen font-sans" style={{ background: 'var(--bg-primary)', color: 'var(--text-primary)', transition: 'all 0.3s ease' }}>
-      <DarkModeToggle />
+    <main className="min-h-screen bg-gray-50 text-gray-900 font-sans">
       {/* Hero Section */}
-      <section className="relative py-24 overflow-hidden" style={{ background: 'linear-gradient(135deg, var(--hero-from) 0%, var(--hero-to) 100%)', color: 'var(--text-primary)', transition: 'all 0.3s ease' }}>
+      <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 text-white py-24 overflow-hidden">
         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
@@ -277,13 +275,13 @@ export default function Home() {
       </section>
 
       {/* Model Information */}
-      <section className="py-20" style={{ background: 'var(--bg-secondary)', transition: 'all 0.3s ease' }}>
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
+            <h2 className="text-3xl font-bold mb-4 text-gray-900">
               Model Information
             </h2>
-            <p className="max-w-2xl mx-auto" style={{ color: 'var(--text-secondary)' }}>
+            <p className="text-gray-600 max-w-2xl mx-auto">
               Powered by Advanced Machine Learning. Our prediction model
               leverages well-established machine learning algorithms from
               scikit-learn as part of an academic ML/DL project.
@@ -291,7 +289,7 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="p-6 card rounded-xl hover:shadow-md transition-shadow">
+            <div className="p-6 bg-gray-50 rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
               <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                 <Cpu className="w-6 h-6 text-blue-600" />
               </div>
@@ -304,7 +302,7 @@ export default function Home() {
                 evaluation.
               </p>
             </div>
-            <div className="p-6 card rounded-xl hover:shadow-md transition-shadow">
+            <div className="p-6 bg-gray-50 rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
               <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
                 <Database className="w-6 h-6 text-green-600" />
               </div>
@@ -316,7 +314,7 @@ export default function Home() {
                 Disease Dataset, ensuring reliable learning.
               </p>
             </div>
-            <div className="p-6 card rounded-xl hover:shadow-md transition-shadow">
+            <div className="p-6 bg-gray-50 rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
               <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
                 <Shield className="w-6 h-6 text-purple-600" />
               </div>
@@ -328,7 +326,7 @@ export default function Home() {
                 ROC-AUC score, validated through systematic testing.
               </p>
             </div>
-            <div className="p-6 card rounded-xl hover:shadow-md transition-shadow">
+            <div className="p-6 bg-gray-50 rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
               <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
                 <Zap className="w-6 h-6 text-orange-600" />
               </div>
@@ -467,12 +465,12 @@ export default function Home() {
       </section>
 
       {/* Prediction Form Section */}
-      <section id="prediction-form" className="py-20" style={{ background: 'linear-gradient(180deg, rgba(245, 243, 255, 0.5) 0%, rgba(240, 247, 255, 0.5) 100%)' }}>
+      <section id="prediction-form" className="py-20 bg-blue-50">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-lg overflow-hidden">
-            <div className="p-6 text-center" style={{ background: 'linear-gradient(135deg, #e6f4ff 0%, #f0e6ff 100%)' }}>
-              <h2 className="text-2xl font-bold" style={{ color: '#1a1a2e' }}>Get Your Prediction</h2>
-              <p style={{ color: '#4a5568' }}>
+          <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
+            <div className="bg-blue-600 p-6 text-white text-center">
+              <h2 className="text-2xl font-bold">Get Your Prediction</h2>
+              <p className="text-blue-100">
                 Enter your health metrics below for an instant assessment
               </p>
             </div>
@@ -699,15 +697,21 @@ export default function Home() {
                     </div>
                   </div>
 
-                  {/* Model Selection (fixed to CatBoost) */}
+                  {/* Model Selection */}
                   <div className="col-span-1 md:col-span-2">
-                    <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-primary)' }}>
-                      Model (fixed)
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Select Model
                     </label>
-                    <div className="w-full rounded-lg p-2.5 border" style={{ background: 'var(--input-bg)', borderColor: 'var(--input-border)', color: 'var(--text-primary)' }}>
-                      CatBoost (default)
-                    </div>
-                    <input type="hidden" name="model_name" value="CatBoost" />
+                    <select
+                      name="model_name"
+                      value={formData.model_name}
+                      onChange={handleChange}
+                      className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2.5 border text-gray-900 bg-gray-50"
+                    >
+                      <option>XGBoost</option>
+                      <option>Random Forest</option>
+                      <option>Logistic Regression</option>
+                    </select>
                   </div>
                 </div>
 
@@ -765,13 +769,13 @@ export default function Home() {
       </section>
 
       {/* Performance Metrics */}
-      <section className="py-20" style={{ background: 'linear-gradient(180deg, rgba(245, 243, 255, 0.3) 0%, rgba(240, 247, 255, 0.3) 100%)' }}>
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold mb-4" style={{ color: '#1a1a2e' }}>
+            <h2 className="text-3xl font-bold mb-4 text-gray-900">
               Performance Metrics
             </h2>
-            <p className="max-w-2xl mx-auto" style={{ color: '#4a5568' }}>
+            <p className="text-gray-600 max-w-2xl mx-auto">
               Model Analytics & Insights. Comprehensive visualization of model
               performance, training metrics, and feature importance.
             </p>
@@ -779,9 +783,9 @@ export default function Home() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
             {/* Accuracy Chart */}
-            <div className="card p-6 rounded-xl">
-              <h3 className="text-xl font-bold mb-6 flex items-center gap-2" style={{ color: '#1a1a2e' }}>
-                <BarChartIcon className="w-5 h-5" style={{ color: '#a78bfa' }} /> Model
+            <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+              <h3 className="text-xl font-bold mb-6 text-gray-900 flex items-center gap-2">
+                <BarChartIcon className="w-5 h-5 text-blue-600" /> Model
                 Accuracy Comparison
               </h3>
               <div className="h-80 w-full">
