@@ -371,7 +371,7 @@ export default function Home() {
         </div>
       </section> */}
 
-      {/* How It Works */}
+      {/* How It Works
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
@@ -722,7 +722,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Performance Metrics */}
       <section className="py-20 bg-white">
