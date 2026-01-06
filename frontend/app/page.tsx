@@ -286,6 +286,310 @@ export default function Home() {
         </div>
       </section>
 
+      {/* How It Works */}
+      <section className="w-full bg-white py-16 md:py-24">
+        <div className="container mx-auto px-4 md:px-8 max-w-6xl">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">How It Works</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              4-step prediction workflow for accurate cardiovascular risk assessment
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8">
+            {[
+              { step: "01", title: "Data Input", desc: "Patient health metrics collected" },
+              { step: "02", title: "Preprocessing", desc: "Data cleaned and validated" },
+              { step: "03", title: "ML Algorithm", desc: "CatBoost model processes features" },
+              { step: "04", title: "Risk Prediction", desc: "Risk probability calculated" },
+            ].map((item, i) => (
+              <div key={i} className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                <div className="text-4xl font-bold text-gray-300 mb-3">{item.step}</div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h3>
+                <p className="text-gray-600 text-sm">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Prediction Form */}
+      <section id="prediction-form" className="w-full bg-gray-50 py-16 md:py-24">
+        <div className="container mx-auto px-4 md:px-8 max-w-6xl">
+          <div className="max-w-3xl mx-auto bg-white rounded-lg border border-gray-200 overflow-hidden shadow-lg">
+            <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white p-6 md:p-8">
+              <h2 className="text-2xl md:text-3xl font-bold">Get Your Prediction</h2>
+              <p className="text-blue-100 mt-2">Enter your health metrics for instant assessment</p>
+            </div>
+            
+            <div className="p-6 md:p-8">
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {/* Gender */}
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Gender</label>
+                    <select
+                      name="gender"
+                      value={formData.gender}
+                      onChange={handleChange}
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    >
+                      <option>Female</option>
+                      <option>Male</option>
+                    </select>
+                  </div>
+
+                  {/* Age */}
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Age (years)</label>
+                    <input
+                      type="number"
+                      name="age"
+                      value={formData.age}
+                      onChange={handleChange}
+                      min="10"
+                      max="100"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    />
+                  </div>
+
+                  {/* Height */}
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Height (cm)</label>
+                    <input
+                      type="number"
+                      name="height"
+                      value={formData.height}
+                      onChange={handleChange}
+                      min="50"
+                      max="250"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    />
+                  </div>
+
+                  {/* Weight */}
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Weight (kg)</label>
+                    <input
+                      type="number"
+                      name="weight"
+                      value={formData.weight}
+                      onChange={handleChange}
+                      min="30"
+                      max="200"
+                      step="0.1"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    />
+                  </div>
+
+                  {/* Systolic BP */}
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Systolic BP</label>
+                    <input
+                      type="number"
+                      name="ap_hi"
+                      value={formData.ap_hi}
+                      onChange={handleChange}
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    />
+                  </div>
+
+                  {/* Diastolic BP */}
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Diastolic BP</label>
+                    <input
+                      type="number"
+                      name="ap_lo"
+                      value={formData.ap_lo}
+                      onChange={handleChange}
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    />
+                  </div>
+
+                  {/* Cholesterol */}
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Cholesterol</label>
+                    <select
+                      name="cholesterol"
+                      value={formData.cholesterol}
+                      onChange={handleChange}
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    >
+                      <option>Low</option>
+                      <option>Normal</option>
+                      <option>High</option>
+                    </select>
+                  </div>
+
+                  {/* Glucose */}
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Glucose</label>
+                    <select
+                      name="glucose"
+                      value={formData.glucose}
+                      onChange={handleChange}
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    >
+                      <option>Low</option>
+                      <option>Normal</option>
+                      <option>High</option>
+                    </select>
+                  </div>
+
+                  {/* Smoke */}
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Smoker?</label>
+                    <div className="flex gap-6">
+                      <label className="inline-flex items-center">
+                        <input
+                          type="radio"
+                          name="smoke"
+                          value="No"
+                          checked={formData.smoke === "No"}
+                          onChange={handleChange}
+                          className="w-4 h-4 text-blue-600"
+                        />
+                        <span className="ml-2 text-gray-700">No</span>
+                      </label>
+                      <label className="inline-flex items-center">
+                        <input
+                          type="radio"
+                          name="smoke"
+                          value="Yes"
+                          checked={formData.smoke === "Yes"}
+                          onChange={handleChange}
+                          className="w-4 h-4 text-blue-600"
+                        />
+                        <span className="ml-2 text-gray-700">Yes</span>
+                      </label>
+                    </div>
+                  </div>
+
+                  {/* Alcohol */}
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Alcohol Intake?</label>
+                    <div className="flex gap-6">
+                      <label className="inline-flex items-center">
+                        <input
+                          type="radio"
+                          name="alco"
+                          value="No"
+                          checked={formData.alco === "No"}
+                          onChange={handleChange}
+                          className="w-4 h-4 text-blue-600"
+                        />
+                        <span className="ml-2 text-gray-700">No</span>
+                      </label>
+                      <label className="inline-flex items-center">
+                        <input
+                          type="radio"
+                          name="alco"
+                          value="Yes"
+                          checked={formData.alco === "Yes"}
+                          onChange={handleChange}
+                          className="w-4 h-4 text-blue-600"
+                        />
+                        <span className="ml-2 text-gray-700">Yes</span>
+                      </label>
+                    </div>
+                  </div>
+
+                  {/* Active */}
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Physical Activity?</label>
+                    <div className="flex gap-6">
+                      <label className="inline-flex items-center">
+                        <input
+                          type="radio"
+                          name="active"
+                          value="Sedentary"
+                          checked={formData.active === "Sedentary"}
+                          onChange={handleChange}
+                          className="w-4 h-4 text-blue-600"
+                        />
+                        <span className="ml-2 text-gray-700">Sedentary</span>
+                      </label>
+                      <label className="inline-flex items-center">
+                        <input
+                          type="radio"
+                          name="active"
+                          value="Active"
+                          checked={formData.active === "Active"}
+                          onChange={handleChange}
+                          className="w-4 h-4 text-blue-600"
+                        />
+                        <span className="ml-2 text-gray-700">Active</span>
+                      </label>
+                    </div>
+                  </div>
+
+                  {/* Model Selection */}
+                  <div className="md:col-span-2">
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Model</label>
+                    <div className="w-full px-4 py-2 border border-gray-300 rounded-lg bg-gray-100 text-gray-700 font-medium">
+                      CatBoost (Highest Accuracy)
+                    </div>
+                    <input type="hidden" name="model_name" value="CatBoost" />
+                  </div>
+                </div>
+
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="w-full py-3 px-6 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 disabled:bg-gray-400 transition-colors"
+                >
+                  {loading ? "Analyzing..." : "Get Cardiovascular Risk Assessment"}
+                </button>
+              </form>
+
+              {error && (
+                <div className="mt-6 p-4 bg-red-50 border border-red-200 rounded-lg text-red-700 flex items-start gap-3">
+                  <AlertTriangle className="w-5 h-5 mt-0.5 shrink-0" />
+                  <p>{error}</p>
+                </div>
+              )}
+
+              {result && (
+                <div className={`mt-8 p-6 rounded-lg text-center border-2 ${
+                  result.prediction === 1
+                    ? "bg-red-50 border-red-200"
+                    : "bg-green-50 border-green-200"
+                }`}>
+                  <div className="flex justify-center mb-4">
+                    {result.prediction === 1 ? (
+                      <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center">
+                        <Activity className="w-8 h-8 text-red-600" />
+                      </div>
+                    ) : (
+                      <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
+                        <Heart className="w-8 h-8 text-green-600" />
+                      </div>
+                    )}
+                  </div>
+                  <h3 className={`text-2xl font-bold mb-2 ${
+                    result.prediction === 1 ? "text-red-800" : "text-green-800"
+                  }`}>
+                    {result.risk} Risk
+                  </h3>
+                  <p className={`text-lg font-semibold ${
+                    result.prediction === 1 ? "text-red-700" : "text-green-700"
+                  }`}>
+                    Probability: {(result.probability * 100).toFixed(1)}%
+                  </p>
+                  <p className={`text-sm mt-3 ${
+                    result.prediction === 1 ? "text-red-600" : "text-green-600"
+                  }`}>
+                    {result.prediction === 1
+                      ? "Higher cardiovascular risk detected. Consult a healthcare professional."
+                      : "Lower cardiovascular risk. Maintain a healthy lifestyle."}
+                  </p>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Technical Specifications */}
       {/* <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
