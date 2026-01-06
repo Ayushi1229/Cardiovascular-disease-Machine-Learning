@@ -41,7 +41,7 @@ export default function Home() {
     smoke: "No",
     alco: "No",
     active: "Active",
-    model_name: "XGBoost",
+    model_name: "CatBoost",
   });
 
   const [result, setResult] = useState<any>(null);
@@ -699,21 +699,15 @@ export default function Home() {
                     </div>
                   </div>
 
-                  {/* Model Selection */}
+                  {/* Model Selection (fixed to CatBoost) */}
                   <div className="col-span-1 md:col-span-2">
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
-                      Select Model
+                    <label className="block text-sm font-medium mb-1" style={{ color: 'var(--text-primary)' }}>
+                      Model (fixed)
                     </label>
-                    <select
-                      name="model_name"
-                      value={formData.model_name}
-                      onChange={handleChange}
-                      className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2.5 border text-gray-900 bg-gray-50"
-                    >
-                      <option>XGBoost</option>
-                      <option>Random Forest</option>
-                      <option>Logistic Regression</option>
-                    </select>
+                    <div className="w-full rounded-lg p-2.5 border" style={{ background: 'var(--input-bg)', borderColor: 'var(--input-border)', color: 'var(--text-primary)' }}>
+                      CatBoost (default)
+                    </div>
+                    <input type="hidden" name="model_name" value="CatBoost" />
                   </div>
                 </div>
 
