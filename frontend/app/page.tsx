@@ -59,6 +59,7 @@ export default function Home() {
             accuracy: parseFloat((data[key] * 100).toFixed(1)),
           }));
           setMetrics(formattedMetrics);
+          console.log(metrics);
         }
       })
       .catch((err) => console.error("Failed to fetch metrics", err));
