@@ -40,7 +40,9 @@ try:
     model_files = {
         "XGBoost": "XGBClassifier_model.joblib",
         "Random Forest": "random_forest_model.joblib",
-        "Logistic Regression": "logistic_regression_model.joblib"
+        "Logistic Regression": "logistic_regression_model.joblib",
+        "CatBoost": "catboost_model.joblib"
+
     }
 
     for name, filename in model_files.items():
