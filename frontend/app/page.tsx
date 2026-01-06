@@ -173,47 +173,59 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white text-gray-900">
       {/* Hero Section */}
-      <section className="w-full bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20 md:py-32">
-        <div className="container mx-auto px-4 md:px-8 max-w-6xl">
-          <div className="text-center space-y-6">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-              CardioPredict AI
+      <section className="relative w-full overflow-hidden bg-slate-900 pt-32 pb-20 lg:pt-40 lg:pb-32">
+        <div className="absolute top-0 left-0 w-full h-full">
+          <div className="absolute top-0 right-0 w-1/2 h-full bg-blue-600/20 blur-[100px] transform translate-x-1/3" />
+          <div className="absolute bottom-0 left-0 w-1/3 h-full bg-purple-600/20 blur-[100px] transform -translate-x-1/3" />
+        </div>
+
+        <div className="container relative mx-auto px-4 md:px-8 max-w-6xl">
+          <div className="text-center space-y-8 max-w-4xl mx-auto">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-900/50 border border-blue-500/30 text-blue-300 text-sm font-medium backdrop-blur-sm">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+              </span>
+              AI-Powered Health Analysis
+            </div>
+
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-tight">
+              Predict Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Heart Health</span> with Precision
             </h1>
-            <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto">
-              Advanced cardiovascular disease risk assessment powered by machine learning
-            </p>
-            <p className="text-base md:text-lg text-blue-200 max-w-2xl mx-auto">
-              Trained on 70K patient records using CatBoost classifier with 73.97% accuracy
+
+            <p className="text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
+              Advanced machine learning algorithm trained on 70,000+ patient records to provide accurate cardiovascular risk assessments in seconds.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <button
                 onClick={scrollToPrediction}
-                className="px-8 py-3 bg-white text-blue-600 rounded-lg font-semibold hover:bg-gray-100 transition-all"
+                className="group relative px-8 py-4 bg-blue-600 text-white rounded-full font-bold text-lg hover:bg-blue-500 transition-all shadow-lg hover:shadow-blue-500/25 flex items-center justify-center gap-2"
               >
-                Get Prediction
+                Start Assessment
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
-              <button className="px-8 py-3 bg-blue-700 border-2 border-white text-white rounded-lg font-semibold hover:bg-blue-900 transition-all">
-                Learn More
+              <button className="px-8 py-4 bg-slate-800 text-white border border-slate-700 rounded-full font-bold text-lg hover:bg-slate-700 transition-all">
+                View Research
               </button>
             </div>
 
-            <div className="grid grid-cols-3 gap-4 md:gap-8 pt-8 border-t border-blue-400 mt-8">
+            <div className="grid grid-cols-3 gap-8 pt-12 border-t border-slate-800 mt-12">
               <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold">
+                <div className="text-4xl font-bold text-white mb-1">
                   {detailedMetrics ? (detailedMetrics.accuracy * 100).toFixed(1) : "73.97"}%
                 </div>
-                <div className="text-sm md:text-base text-blue-200 mt-2">Accuracy</div>
+                <div className="text-sm font-medium text-slate-400 uppercase tracking-wider">Accuracy</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold">70K</div>
-                <div className="text-sm md:text-base text-blue-200 mt-2">Samples</div>
+                <div className="text-4xl font-bold text-white mb-1">70K+</div>
+                <div className="text-sm font-medium text-slate-400 uppercase tracking-wider">Patient Records</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold">
+                <div className="text-4xl font-bold text-white mb-1">
                   {detailedMetrics ? detailedMetrics.roc_auc.toFixed(3) : "0.805"}
                 </div>
-                <div className="text-sm md:text-base text-blue-200 mt-2">ROC-AUC</div>
+                <div className="text-sm font-medium text-slate-400 uppercase tracking-wider">ROC-AUC Score</div>
               </div>
             </div>
           </div>
@@ -551,8 +563,8 @@ export default function Home() {
 
               {result && (
                 <div className={`mt-8 p-6 rounded-lg text-center border-2 ${result.prediction === 1
-                    ? "bg-red-50 border-red-200"
-                    : "bg-green-50 border-green-200"
+                  ? "bg-red-50 border-red-200"
+                  : "bg-green-50 border-green-200"
                   }`}>
                   <div className="flex justify-center mb-4">
                     {result.prediction === 1 ? (
@@ -719,252 +731,250 @@ export default function Home() {
               </p>
             </div>
             <div className="p-8">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {/* Gender */}
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
-                      Gender
-                    </label>
-                    <select
-                      name="gender"
-                      value={formData.gender}
-                      onChange={handleChange}
-                      className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2.5 border text-gray-900 bg-gray-50"
-                    >
-                      <option>Female</option>
-                      <option>Male</option>
-                    </select>
-                  </div>
-
-                  {/* Age */}
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
-                      Age (years)
-                    </label>
-                    <input
-                      type="number"
-                      name="age"
-                      value={formData.age}
-                      onChange={handleChange}
-                      min="10"
-                      max="100"
-                      className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2.5 border text-gray-900 bg-gray-50"
-                    />
-                  </div>
-
-                  {/* Height */}
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
-                      Height (cm)
-                    </label>
-                    <input
-                      type="number"
-                      name="height"
-                      value={formData.height}
-                      onChange={handleChange}
-                      min="50"
-                      max="250"
-                      className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2.5 border text-gray-900 bg-gray-50"
-                    />
-                  </div>
-
-                  {/* Weight */}
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
-                      Weight (kg)
-                    </label>
-                    <input
-                      type="number"
-                      name="weight"
-                      value={formData.weight}
-                      onChange={handleChange}
-                      min="30"
-                      max="200"
-                      step="0.1"
-                      className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2.5 border text-gray-900 bg-gray-50"
-                    />
-                  </div>
-
-                  {/* Systolic BP */}
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
-                      Systolic BP (ap_hi)
-                    </label>
-                    <input
-                      type="number"
-                      name="ap_hi"
-                      value={formData.ap_hi}
-                      onChange={handleChange}
-                      className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2.5 border text-gray-900 bg-gray-50"
-                    />
-                  </div>
-
-                  {/* Diastolic BP */}
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
-                      Diastolic BP (ap_lo)
-                    </label>
-                    <input
-                      type="number"
-                      name="ap_lo"
-                      value={formData.ap_lo}
-                      onChange={handleChange}
-                      className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2.5 border text-gray-900 bg-gray-50"
-                    />
-                  </div>
-
-                  {/* Cholesterol */}
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
-                      Cholesterol
-                    </label>
-                    <select
-                      name="cholesterol"
-                      value={formData.cholesterol}
-                      onChange={handleChange}
-                      className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2.5 border text-gray-900 bg-gray-50"
-                    >
-                      <option>Low</option>
-                      <option>Normal</option>
-                      <option>High</option>
-                    </select>
-                  </div>
-
-                  {/* Glucose */}
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
-                      Glucose
-                    </label>
-                    <select
-                      name="glucose"
-                      value={formData.glucose}
-                      onChange={handleChange}
-                      className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2.5 border text-gray-900 bg-gray-50"
-                    >
-                      <option>Low</option>
-                      <option>Normal</option>
-                      <option>High</option>
-                    </select>
-                  </div>
-
-                  {/* Smoke */}
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
-                      Smoker?
-                    </label>
-                    <div className="flex gap-4 mt-2">
-                      <label className="inline-flex items-center cursor-pointer">
-                        <input
-                          type="radio"
-                          name="smoke"
-                          value="No"
-                          checked={formData.smoke === "No"}
-                          onChange={handleChange}
-                          className="form-radio text-blue-600 w-4 h-4"
-                        />
-                        <span className="ml-2 text-gray-900">No</span>
-                      </label>
-                      <label className="inline-flex items-center cursor-pointer">
-                        <input
-                          type="radio"
-                          name="smoke"
-                          value="Yes"
-                          checked={formData.smoke === "Yes"}
-                          onChange={handleChange}
-                          className="form-radio text-blue-600 w-4 h-4"
-                        />
-                        <span className="ml-2 text-gray-900">Yes</span>
-                      </label>
+              <form onSubmit={handleSubmit} className="space-y-8">
+                {/* Personal Information */}
+                <div className="space-y-4">
+                  <h3 className="text-lg font-semibold text-gray-900 border-b pb-2">Personal Information</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">Gender</label>
+                      <select
+                        name="gender"
+                        value={formData.gender}
+                        onChange={handleChange}
+                        className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-3 border text-gray-900 bg-gray-50 transition-colors"
+                      >
+                        <option>Female</option>
+                        <option>Male</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">Age (years)</label>
+                      <input
+                        type="number"
+                        name="age"
+                        value={formData.age}
+                        onChange={handleChange}
+                        min="10"
+                        max="100"
+                        className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-3 border text-gray-900 bg-gray-50 transition-colors"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">Height (cm)</label>
+                      <input
+                        type="number"
+                        name="height"
+                        value={formData.height}
+                        onChange={handleChange}
+                        min="50"
+                        max="250"
+                        className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-3 border text-gray-900 bg-gray-50 transition-colors"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">Weight (kg)</label>
+                      <input
+                        type="number"
+                        name="weight"
+                        value={formData.weight}
+                        onChange={handleChange}
+                        min="30"
+                        max="200"
+                        step="0.1"
+                        className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-3 border text-gray-900 bg-gray-50 transition-colors"
+                      />
                     </div>
                   </div>
+                </div>
 
-                  {/* Alcohol */}
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
-                      Alcohol Intake?
-                    </label>
-                    <div className="flex gap-4 mt-2">
-                      <label className="inline-flex items-center cursor-pointer">
-                        <input
-                          type="radio"
-                          name="alco"
-                          value="No"
-                          checked={formData.alco === "No"}
-                          onChange={handleChange}
-                          className="form-radio text-blue-600 w-4 h-4"
-                        />
-                        <span className="ml-2 text-gray-900">No</span>
-                      </label>
-                      <label className="inline-flex items-center cursor-pointer">
-                        <input
-                          type="radio"
-                          name="alco"
-                          value="Yes"
-                          checked={formData.alco === "Yes"}
-                          onChange={handleChange}
-                          className="form-radio text-blue-600 w-4 h-4"
-                        />
-                        <span className="ml-2 text-gray-900">Yes</span>
-                      </label>
+                {/* Vitals */}
+                <div className="space-y-4">
+                  <h3 className="text-lg font-semibold text-gray-900 border-b pb-2">Medical Vitals</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">Systolic BP (ap_hi)</label>
+                      <input
+                        type="number"
+                        name="ap_hi"
+                        value={formData.ap_hi}
+                        onChange={handleChange}
+                        className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-3 border text-gray-900 bg-gray-50 transition-colors"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">Diastolic BP (ap_lo)</label>
+                      <input
+                        type="number"
+                        name="ap_lo"
+                        value={formData.ap_lo}
+                        onChange={handleChange}
+                        className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-3 border text-gray-900 bg-gray-50 transition-colors"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">Cholesterol</label>
+                      <select
+                        name="cholesterol"
+                        value={formData.cholesterol}
+                        onChange={handleChange}
+                        className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-3 border text-gray-900 bg-gray-50 transition-colors"
+                      >
+                        <option>Low</option>
+                        <option>Normal</option>
+                        <option>High</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">Glucose</label>
+                      <select
+                        name="glucose"
+                        value={formData.glucose}
+                        onChange={handleChange}
+                        className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-3 border text-gray-900 bg-gray-50 transition-colors"
+                      >
+                        <option>Low</option>
+                        <option>Normal</option>
+                        <option>High</option>
+                      </select>
                     </div>
                   </div>
+                </div>
 
-                  {/* Active */}
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
-                      Physical Activity?
-                    </label>
-                    <div className="flex gap-4 mt-2">
-                      <label className="inline-flex items-center cursor-pointer">
-                        <input
-                          type="radio"
-                          name="active"
-                          value="Sedentary"
-                          checked={formData.active === "Sedentary"}
-                          onChange={handleChange}
-                          className="form-radio text-blue-600 w-4 h-4"
-                        />
-                        <span className="ml-2 text-gray-900">Sedentary</span>
-                      </label>
-                      <label className="inline-flex items-center cursor-pointer">
-                        <input
-                          type="radio"
-                          name="active"
-                          value="Active"
-                          checked={formData.active === "Active"}
-                          onChange={handleChange}
-                          className="form-radio text-blue-600 w-4 h-4"
-                        />
-                        <span className="ml-2 text-gray-900">Active</span>
-                      </label>
+                {/* Lifestyle */}
+                <div className="space-y-4">
+                  <h3 className="text-lg font-semibold text-gray-900 border-b pb-2">Lifestyle Factors</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-3">Smoker?</label>
+                      <div className="flex gap-4">
+                        <label className="relative flex-1 cursor-pointer">
+                          <input
+                            type="radio"
+                            name="smoke"
+                            value="No"
+                            checked={formData.smoke === "No"}
+                            onChange={handleChange}
+                            className="peer sr-only"
+                          />
+                          <div className="p-3 text-center rounded-lg border border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-50 peer-checked:text-blue-700 hover:bg-gray-50 transition-all">
+                            No
+                          </div>
+                        </label>
+                        <label className="relative flex-1 cursor-pointer">
+                          <input
+                            type="radio"
+                            name="smoke"
+                            value="Yes"
+                            checked={formData.smoke === "Yes"}
+                            onChange={handleChange}
+                            className="peer sr-only"
+                          />
+                          <div className="p-3 text-center rounded-lg border border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-50 peer-checked:text-blue-700 hover:bg-gray-50 transition-all">
+                            Yes
+                          </div>
+                        </label>
+                      </div>
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-3">Alcohol Intake?</label>
+                      <div className="flex gap-4">
+                        <label className="relative flex-1 cursor-pointer">
+                          <input
+                            type="radio"
+                            name="alco"
+                            value="No"
+                            checked={formData.alco === "No"}
+                            onChange={handleChange}
+                            className="peer sr-only"
+                          />
+                          <div className="p-3 text-center rounded-lg border border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-50 peer-checked:text-blue-700 hover:bg-gray-50 transition-all">
+                            No
+                          </div>
+                        </label>
+                        <label className="relative flex-1 cursor-pointer">
+                          <input
+                            type="radio"
+                            name="alco"
+                            value="Yes"
+                            checked={formData.alco === "Yes"}
+                            onChange={handleChange}
+                            className="peer sr-only"
+                          />
+                          <div className="p-3 text-center rounded-lg border border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-50 peer-checked:text-blue-700 hover:bg-gray-50 transition-all">
+                            Yes
+                          </div>
+                        </label>
+                      </div>
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-3">Physical Activity?</label>
+                      <div className="flex gap-4">
+                        <label className="relative flex-1 cursor-pointer">
+                          <input
+                            type="radio"
+                            name="active"
+                            value="Sedentary"
+                            checked={formData.active === "Sedentary"}
+                            onChange={handleChange}
+                            className="peer sr-only"
+                          />
+                          <div className="p-3 text-center rounded-lg border border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-50 peer-checked:text-blue-700 hover:bg-gray-50 transition-all">
+                            No
+                          </div>
+                        </label>
+                        <label className="relative flex-1 cursor-pointer">
+                          <input
+                            type="radio"
+                            name="active"
+                            value="Active"
+                            checked={formData.active === "Active"}
+                            onChange={handleChange}
+                            className="peer sr-only"
+                          />
+                          <div className="p-3 text-center rounded-lg border border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-50 peer-checked:text-blue-700 hover:bg-gray-50 transition-all">
+                            Yes
+                          </div>
+                        </label>
+                      </div>
                     </div>
                   </div>
+                </div>
 
-                  {/* Model Selection */}
-                  <div className="col-span-1 md:col-span-2">
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
-                      Select Model
-                    </label>
-                    <select
-                      name="model_name"
-                      value={formData.model_name}
-                      onChange={handleChange}
-                      className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2.5 border text-gray-900 bg-gray-50"
-                    >
-                      <option>XGBoost</option>
-                      <option>Random Forest</option>
-                      <option>Logistic Regression</option>
-                    </select>
-                  </div>
+                {/* Model Selection */}
+                <div className="pt-4 border-t">
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Selected Model</label>
+                  <select
+                    name="model_name"
+                    value={formData.model_name}
+                    onChange={handleChange}
+                    className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-3 border text-gray-900 bg-gray-50 transition-colors"
+                  >
+                    <option>XGBoost</option>
+                    <option>Random Forest</option>
+                    <option>Logistic Regression</option>
+                    <option>CatBoost</option>
+                  </select>
+                  <p className="text-xs text-gray-500 mt-1">Select the machine learning algorithm for your prediction.</p>
                 </div>
 
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-base font-bold text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:bg-blue-300 transition-colors"
+                  className="w-full relative group overflow-hidden py-4 px-6 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-bold rounded-xl shadow-lg hover:shadow-blue-500/30 transition-all transform hover:-translate-y-0.5"
                 >
-                  {loading ? "Analyzing..." : "Analyze Risk"}
+                  <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
+                  {loading ? (
+                    <span className="flex items-center justify-center gap-2">
+                      <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                      Processing Health Data...
+                    </span>
+                  ) : "Analyze Health Risk"}
                 </button>
               </form>
 
