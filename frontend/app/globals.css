@@ -5,10 +5,34 @@
   --bg-secondary: #f5f3ff;
   --hero-from: #e6f4ff;
   --hero-to: #f0e6ff;
-  --text-primary: #1a1a2e;
-  --text-secondary: #4a5568;
+  --text-primary: #0d1117;
+  --text-secondary: #24292e;
   --card-bg: #ffffff;
   --accent: #a78bfa;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --hero-from: #1a2332;
+    --hero-to: #2d1b4e;
+    --text-primary: #f6f8fa;
+    --text-secondary: #c9d1d9;
+    --card-bg: #161b22;
+    --accent: #d8b4fe;
+  }
+}
+
+body.dark-mode {
+  --bg-primary: #0d1117;
+  --bg-secondary: #161b22;
+  --hero-from: #1a2332;
+  --hero-to: #2d1b4e;
+  --text-primary: #f6f8fa;
+  --text-secondary: #c9d1d9;
+  --card-bg: #161b22;
+  --accent: #d8b4fe;
 }
 
 @theme inline {

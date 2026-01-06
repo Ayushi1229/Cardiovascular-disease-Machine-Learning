@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import DarkModeToggle from "./components/DarkModeToggle";
 import {
   BarChart,
   Bar,
@@ -171,9 +172,10 @@ export default function Home() {
       ];
 
   return (
-    <main className="min-h-screen font-sans" style={{ background: 'linear-gradient(180deg, #f0f7ff 0%, #f5f3ff 50%, #f0f7ff 100%)', color: '#1a1a2e' }}>
+    <main className="min-h-screen font-sans" style={{ background: 'var(--bg-primary)', color: 'var(--text-primary)', transition: 'all 0.3s ease' }}>
+      <DarkModeToggle />
       {/* Hero Section */}
-      <section className="relative py-24 overflow-hidden" style={{ background: 'linear-gradient(135deg, #e6f4ff 0%, #f0e6ff 100%)', color: '#1a1a2e' }}>
+      <section className="relative py-24 overflow-hidden" style={{ background: 'linear-gradient(135deg, var(--hero-from) 0%, var(--hero-to) 100%)', color: 'var(--text-primary)', transition: 'all 0.3s ease' }}>
         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
@@ -275,13 +277,13 @@ export default function Home() {
       </section>
 
       {/* Model Information */}
-      <section className="py-20" style={{ background: 'linear-gradient(180deg, rgba(245, 243, 255, 0.4) 0%, rgba(240, 247, 255, 0.4) 100%)' }}>
+      <section className="py-20" style={{ background: 'var(--bg-secondary)', transition: 'all 0.3s ease' }}>
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold mb-4 text-gray-900">
+            <h2 className="text-3xl font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
               Model Information
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="max-w-2xl mx-auto" style={{ color: 'var(--text-secondary)' }}>
               Powered by Advanced Machine Learning. Our prediction model
               leverages well-established machine learning algorithms from
               scikit-learn as part of an academic ML/DL project.
