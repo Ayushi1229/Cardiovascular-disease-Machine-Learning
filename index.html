@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<!--u1B30S_Yx8YzYvrjUNy7j-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="preload"
+      href="/_next/static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+      as="font"
+      crossorigin=""
+      type="font/woff2"
+    />
+    <link
+      rel="stylesheet"
+      href="/_next/static/chunks/c6566460d0f2b7e0.css"
+      data-precedence="next"
+    />
+    <link
+      rel="preload"
+      as="script"
+      fetchPriority="low"
+      href="/_next/static/chunks/14ccd08bdbbc15eb.js"
+    />
+    <script src="/_next/static/chunks/597d6dc2102ab329.js" async=""></script>
+    <script src="/_next/static/chunks/3cf882efbc0c070e.js" async=""></script>
+    <script src="/_next/static/chunks/65b73a9b8139a0e8.js" async=""></script>
+    <script src="/_next/static/chunks/8da4fb5a2a2f779b.js" async=""></script>
+    <script
+      src="/_next/static/chunks/turbopack-2d266b22b469c4af.js"
+      async=""
+    ></script>
+    <script src="/_next/static/chunks/a25ed3e656d6aa44.js" async=""></script>
+    <script src="/_next/static/chunks/b2ba12d1cc35e0fa.js" async=""></script>
+    <script src="/_next/static/chunks/21c0d51b2dfd782c.js" async=""></script>
+    <script src="/_next/static/chunks/0cf22d5447adfe03.js" async=""></script>
+    <script src="/_next/static/chunks/4ae0c8f53c6e9334.js" async=""></script>
+    <meta name="next-size-adjust" content="" />
+    <title>CardioPredict AI - Cardiovascular Disease Prediction</title>
+    <meta
+      name="description"
+      content="AI-powered cardiovascular disease risk assessment using machine learning"
+    />
+    <meta name="generator" content="v0.app" />
+    <link
+      rel="icon"
+      href="/favicon.ico?favicon.0b3bf435.ico"
+      sizes="256x256"
+      type="image/x-icon"
+    />
+    <link
+      rel="icon"
+      href="/icon-light-32x32.png"
+      media="(prefers-color-scheme: light)"
+    />
+    <link
+      rel="icon"
+      href="/icon-dark-32x32.png"
+      media="(prefers-color-scheme: dark)"
+    />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-icon.png" />
+    <script src="/_next/static/chunks/a6dad97d9634a72d.js" nomodule=""></script>
+  </head>
+  <body class="inter_5972bc34-module__OU16Qa__className antialiased">
+    <div hidden=""><!--$--><!--/$--></div>
+    <main class="min-h-screen">
+      <button
+        data-slot="button"
+        class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*=&#x27;size-&#x27;])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border shadow-xs hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 size-9 fixed top-6 right-6 z-50 rounded-full bg-card/80 backdrop-blur border-primary/20 hover:bg-card hover:border-primary/40 transition-all duration-300"
+        aria-label="Toggle theme"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-sun h-5 w-5 text-primary transition-transform duration-300 rotate-0 scale-100"
+        >
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2"></path>
+          <path d="M12 20v2"></path>
+          <path d="m4.93 4.93 1.41 1.41"></path>
+          <path d="m17.66 17.66 1.41 1.41"></path>
+          <path d="M2 12h2"></path>
+          <path d="M20 12h2"></path>
+          <path d="m6.34 17.66-1.41 1.41"></path>
+          <path d="m19.07 4.93-1.41 1.41"></path>
+        </svg>
+      </button>
+      <section class="relative overflow-hidden">
+        <div
+          class="absolute inset-0 bg-gradient-to-br from-primary/20 via-background to-accent/20 animate-gradient"
+        ></div>
+        <div class="relative z-10 container mx-auto px-4 py-24 md:py-32">
+          <div class="max-w-4xl mx-auto text-center space-y-8">
+            <div class="flex justify-center">
+              <div class="relative">
+                <div
+                  class="absolute inset-0 bg-primary/30 blur-2xl rounded-full"
+                ></div>
+                <div
+                  class="relative bg-card border border-primary/50 rounded-full p-6 pulse-glow"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-heart h-12 w-12 text-primary"
+                  >
+                    <path
+                      d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div class="space-y-4">
+              <h1
+                class="text-5xl md:text-7xl font-bold text-balance bg-gradient-to-r from-foreground via-primary to-accent bg-clip-text text-transparent"
+              >
+                CardioPredict AI
+              </h1>
+              <p class="text-xl md:text-2xl text-muted-foreground text-balance">
+                Advanced cardiovascular disease risk assessment powered by
+                machine learning
+              </p>
+            </div>
+            <p
+              class="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty leading-relaxed"
+            >
+              Our AI model analyzes multiple health factors to provide accurate
+              cardiovascular disease risk predictions, helping healthcare
+              professionals make informed decisions.
+            </p>
+            <div
+              class="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            >
+              <button
+                data-slot="button"
+                class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*=&#x27;size-&#x27;])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-primary text-primary-foreground hover:bg-primary/90 h-10 rounded-md has-[&gt;svg]:px-4 text-lg px-8 group"
+              >
+                Get Prediction<svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-activity ml-2 h-5 w-5 group-hover:animate-pulse"
+                >
+                  <path
+                    d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"
+                  ></path>
+                </svg></button
+              ><button
+                data-slot="button"
+                class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*=&#x27;size-&#x27;])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 h-10 rounded-md has-[&gt;svg]:px-4 text-lg px-8 bg-transparent"
+              >
+                Learn More
+              </button>
+            </div>
+            <div class="grid grid-cols-3 gap-8 pt-12 max-w-2xl mx-auto">
+              <div class="space-y-2">
+                <div class="text-3xl md:text-4xl font-bold text-primary">
+                  73.97%
+                </div>
+                <div class="text-sm text-muted-foreground">Accuracy</div>
+              </div>
+              <div class="space-y-2">
+                <div class="text-3xl md:text-4xl font-bold text-accent">
+                  70K
+                </div>
+                <div class="text-sm text-muted-foreground">Data Points</div>
+              </div>
+              <div class="space-y-2">
+                <div class="text-3xl md:text-4xl font-bold text-chart-3">
+                  0.805
+                </div>
+                <div class="text-sm text-muted-foreground">ROC-AUC</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent"
+        ></div>
+      </section>
+      <section class="py-12 container mx-auto px-4">
+        <div
+          data-slot="card"
+          class="text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm max-w-4xl mx-auto border-destructive/50 bg-destructive/5"
+        >
+          <div class="p-6 md:p-8 space-y-4">
+            <div class="flex items-start gap-4">
+              <div class="bg-destructive/20 p-3 rounded-lg shrink-0">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-triangle-alert h-6 w-6 text-destructive"
+                >
+                  <path
+                    d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"
+                  ></path>
+                  <path d="M12 9v4"></path>
+                  <path d="M12 17h.01"></path>
+                </svg>
+              </div>
+              <div class="space-y-3 flex-1">
+                <h2
+                  class="text-2xl font-bold text-foreground flex items-center gap-2"
+                >
+                  Medical Disclaimer
+                </h2>
+                <div class="space-y-2 text-muted-foreground leading-relaxed">
+                  <p>
+                    <strong class="text-foreground">Important:</strong> This AI
+                    model is designed for educational and research purposes
+                    only. It should NOT be used as a substitute for professional
+                    medical advice, diagnosis, or treatment.
+                  </p>
+                  <ul class="list-disc list-inside space-y-1 ml-4">
+                    <li>
+                      Always seek the advice of qualified healthcare providers
+                    </li>
+                    <li>
+                      Never disregard professional medical advice based on this
+                      prediction
+                    </li>
+                    <li>This tool is part of an ML/DL academic project</li>
+                    <li>
+                      Results should be validated by medical professionals
+                    </li>
+                  </ul>
+                  <p class="pt-2 flex items-center gap-2 text-sm">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-shield-alert h-4 w-4 text-destructive"
+                    >
+                      <path
+                        d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
+                      ></path>
+                      <path d="M12 8v4"></path>
+                      <path d="M12 16h.01"></path></svg
+                    ><span
+                      >By using this tool, you acknowledge that you understand
+                      and accept these limitations.</span
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        id="model-info"
+        class="py-20 container mx-auto px-4 bg-secondary/30"
+      >
+        <div class="max-w-6xl mx-auto space-y-12">
+          <div class="text-center space-y-4">
+            <div
+              class="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold"
+            >
+              Model Information
+            </div>
+            <h2 class="text-4xl md:text-5xl font-bold text-balance">
+              Powered by Advanced Machine Learning
+            </h2>
+            <p
+              class="text-lg text-muted-foreground text-pretty max-w-2xl mx-auto"
+            >
+              Our prediction model leverages well-established machine learning
+              algorithms from scikit-learn as part of an academic ML/DL project,
+              focusing on data preprocessing, model selection, and performance
+              evaluation.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div
+              data-slot="card"
+              class="text-card-foreground flex flex-col gap-6 rounded-xl border shadow-sm p-6 border-primary/20 bg-card hover:border-primary/50 transition-all duration-300 hover:scale-105"
+            >
+              <div class="flex items-start gap-4">
+                <div class="bg-primary/20 p-3 rounded-lg shrink-0">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-brain h-6 w-6 text-primary"
+                  >
+                    <path
+                      d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"
+                    ></path>
+                    <path
+                      d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"
+                    ></path>
+                    <path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"></path>
+                    <path d="M17.599 6.5a3 3 0 0 0 .399-1.375"></path>
+                    <path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"></path>
+                    <path d="M3.477 10.896a4 4 0 0 1 .585-.396"></path>
+                    <path d="M19.938 10.5a4 4 0 0 1 .585.396"></path>
+                    <path d="M6 18a4 4 0 0 1-1.967-.516"></path>
+                    <path d="M19.967 17.484A4 4 0 0 1 18 18"></path>
+                  </svg>
+                </div>
+                <div class="space-y-2">
+                  <h3 class="text-xl font-semibold text-foreground">
+                    Sklearn-Based ML Model
+                  </h3>
+                  <p class="text-muted-foreground leading-relaxed">
+                    Built using proven machine learning algorithms from
+                    scikit-learn, focusing on proper feature engineering,
+                    preprocessing, and evaluation
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              data-slot="card"
+              class="text-card-foreground flex flex-col gap-6 rounded-xl border shadow-sm p-6 border-primary/20 bg-card hover:border-primary/50 transition-all duration-300 hover:scale-105"
+            >
+              <div class="flex items-start gap-4">
+                <div class="bg-primary/20 p-3 rounded-lg shrink-0">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-database h-6 w-6 text-primary"
+                  >
+                    <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                    <path d="M3 5V19A9 3 0 0 0 21 19V5"></path>
+                    <path d="M3 12A9 3 0 0 0 21 12"></path>
+                  </svg>
+                </div>
+                <div class="space-y-2">
+                  <h3 class="text-xl font-semibold text-foreground">
+                    Kaggle Cardiovascular Dataset
+                  </h3>
+                  <p class="text-muted-foreground leading-relaxed">
+                    Trained on 70,000 patient records from the Cardiovascular
+                    Disease Dataset, ensuring reliable learning and real-world
+                    relevance
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              data-slot="card"
+              class="text-card-foreground flex flex-col gap-6 rounded-xl border shadow-sm p-6 border-primary/20 bg-card hover:border-primary/50 transition-all duration-300 hover:scale-105"
+            >
+              <div class="flex items-start gap-4">
+                <div class="bg-primary/20 p-3 rounded-lg shrink-0">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-target h-6 w-6 text-primary"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <circle cx="12" cy="12" r="6"></circle>
+                    <circle cx="12" cy="12" r="2"></circle>
+                  </svg>
+                </div>
+                <div class="space-y-2">
+                  <h3 class="text-xl font-semibold text-foreground">
+                    Reliable Performance
+                  </h3>
+                  <p class="text-muted-foreground leading-relaxed">
+                    Achieves strong predictive performance with high accuracy
+                    and ROC-AUC score, validated through systematic testing
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              data-slot="card"
+              class="text-card-foreground flex flex-col gap-6 rounded-xl border shadow-sm p-6 border-primary/20 bg-card hover:border-primary/50 transition-all duration-300 hover:scale-105"
+            >
+              <div class="flex items-start gap-4">
+                <div class="bg-primary/20 p-3 rounded-lg shrink-0">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-zap h-6 w-6 text-primary"
+                  >
+                    <path
+                      d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="space-y-2">
+                  <h3 class="text-xl font-semibold text-foreground">
+                    Real-time Inference
+                  </h3>
+                  <p class="text-muted-foreground leading-relaxed">
+                    Fast cardiovascular risk prediction using optimized sklearn
+                    pipelines integrated with a real-time backend API
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            data-slot="card"
+            class="text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm border-primary/20 bg-card/50"
+          >
+            <div class="p-6 md:p-8 space-y-6">
+              <h3 class="text-2xl font-bold text-foreground">
+                Technical Specifications
+              </h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="space-y-3">
+                  <div
+                    class="flex justify-between items-center py-2 border-b border-border"
+                  >
+                    <span class="text-muted-foreground">Algorithm</span
+                    ><span class="font-semibold text-foreground"
+                      >CatBoostClassifier</span
+                    >
+                  </div>
+                  <div
+                    class="flex justify-between items-center py-2 border-b border-border"
+                  >
+                    <span class="text-muted-foreground">Training Data</span
+                    ><span class="font-semibold text-foreground"
+                      >70,000 samples</span
+                    >
+                  </div>
+                  <div
+                    class="flex justify-between items-center py-2 border-b border-border"
+                  >
+                    <span class="text-muted-foreground">Features</span
+                    ><span class="font-semibold text-foreground"
+                      >11 input variables</span
+                    >
+                  </div>
+                </div>
+                <div class="space-y-3">
+                  <div
+                    class="flex justify-between items-center py-2 border-b border-border"
+                  >
+                    <span class="text-muted-foreground">Accuracy</span
+                    ><span class="font-semibold text-primary">73.97%</span>
+                  </div>
+                  <div
+                    class="flex justify-between items-center py-2 border-b border-border"
+                  >
+                    <span class="text-muted-foreground">ROC-AUC Score</span
+                    ><span class="font-semibold text-accent">0.805</span>
+                  </div>
+                  <div
+                    class="flex justify-between items-center py-2 border-b border-border"
+                  >
+                    <span class="text-muted-foreground">Libraries Used</span
+                    ><span class="font-semibold text-foreground"
+                      >NumPy, Pandas, Scikit-learn</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="py-20 container mx-auto px-4">
+        <div class="max-w-6xl mx-auto space-y-12">
+          <div class="text-center space-y-4">
+            <div
+              class="inline-block bg-accent/10 text-accent px-4 py-2 rounded-full text-sm font-semibold"
+            >
+              How It Works
+            </div>
+            <h2 class="text-4xl md:text-5xl font-bold text-balance">
+              Prediction Workflow
+            </h2>
+            <p
+              class="text-lg text-muted-foreground text-pretty max-w-2xl mx-auto"
+            >
+              Our model follows a rigorous 4-step process to deliver accurate
+              cardiovascular disease risk assessments
+            </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="relative">
+              <div
+                data-slot="card"
+                class="text-card-foreground flex flex-col gap-6 rounded-xl border shadow-sm p-6 border-primary/20 bg-card h-full hover:border-primary/50 transition-all duration-300"
+              >
+                <div class="space-y-4">
+                  <div class="flex items-center justify-between">
+                    <div class="text-5xl font-bold text-primary/20">01</div>
+                    <div class="bg-primary/20 p-3 rounded-lg">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-file-input h-6 w-6 text-primary"
+                      >
+                        <path
+                          d="M4 22h14a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v4"
+                        ></path>
+                        <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
+                        <path d="M2 15h10"></path>
+                        <path d="m9 18 3-3-3-3"></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="space-y-2">
+                    <h3 class="text-xl font-semibold text-foreground">
+                      Data Input
+                    </h3>
+                    <p class="text-muted-foreground text-sm leading-relaxed">
+                      Patient health metrics are collected including age, blood
+                      pressure, cholesterol levels, glucose values, and
+                      lifestyle-related factors
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="hidden lg:block absolute top-1/2 -right-3 w-6 h-0.5 bg-primary/30"
+              ></div>
+            </div>
+            <div class="relative">
+              <div
+                data-slot="card"
+                class="text-card-foreground flex flex-col gap-6 rounded-xl border shadow-sm p-6 border-primary/20 bg-card h-full hover:border-primary/50 transition-all duration-300"
+              >
+                <div class="space-y-4">
+                  <div class="flex items-center justify-between">
+                    <div class="text-5xl font-bold text-primary/20">02</div>
+                    <div class="bg-primary/20 p-3 rounded-lg">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-chart-column h-6 w-6 text-primary"
+                      >
+                        <path d="M3 3v16a2 2 0 0 0 2 2h16"></path>
+                        <path d="M18 17V9"></path>
+                        <path d="M13 17V5"></path>
+                        <path d="M8 17v-3"></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="space-y-2">
+                    <h3 class="text-xl font-semibold text-foreground">
+                      Preprocessing
+                    </h3>
+                    <p class="text-muted-foreground text-sm leading-relaxed">
+                      Input data is cleaned, encoded, scaled, and validated
+                      using standard preprocessing techniques to ensure
+                      consistency and model readiness
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="hidden lg:block absolute top-1/2 -right-3 w-6 h-0.5 bg-primary/30"
+              ></div>
+            </div>
+            <div class="relative">
+              <div
+                data-slot="card"
+                class="text-card-foreground flex flex-col gap-6 rounded-xl border shadow-sm p-6 border-primary/20 bg-card h-full hover:border-primary/50 transition-all duration-300"
+              >
+                <div class="space-y-4">
+                  <div class="flex items-center justify-between">
+                    <div class="text-5xl font-bold text-primary/20">03</div>
+                    <div class="bg-primary/20 p-3 rounded-lg">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-brain h-6 w-6 text-primary"
+                      >
+                        <path
+                          d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"
+                        ></path>
+                        <path
+                          d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"
+                        ></path>
+                        <path
+                          d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"
+                        ></path>
+                        <path d="M17.599 6.5a3 3 0 0 0 .399-1.375"></path>
+                        <path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"></path>
+                        <path d="M3.477 10.896a4 4 0 0 1 .585-.396"></path>
+                        <path d="M19.938 10.5a4 4 0 0 1 .585.396"></path>
+                        <path d="M6 18a4 4 0 0 1-1.967-.516"></path>
+                        <path d="M19.967 17.484A4 4 0 0 1 18 18"></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="space-y-2">
+                    <h3 class="text-xl font-semibold text-foreground">
+                      ML Algorithm
+                    </h3>
+                    <p class="text-muted-foreground text-sm leading-relaxed">
+                      A machine learning model built using scikit-learn
+                      algorithms processes the input features through a trained
+                      prediction pipeline
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="hidden lg:block absolute top-1/2 -right-3 w-6 h-0.5 bg-primary/30"
+              ></div>
+            </div>
+            <div class="relative">
+              <div
+                data-slot="card"
+                class="text-card-foreground flex flex-col gap-6 rounded-xl border shadow-sm p-6 border-primary/20 bg-card h-full hover:border-primary/50 transition-all duration-300"
+              >
+                <div class="space-y-4">
+                  <div class="flex items-center justify-between">
+                    <div class="text-5xl font-bold text-primary/20">04</div>
+                    <div class="bg-primary/20 p-3 rounded-lg">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-sparkles h-6 w-6 text-primary"
+                      >
+                        <path
+                          d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"
+                        ></path>
+                        <path d="M20 3v4"></path>
+                        <path d="M22 5h-4"></path>
+                        <path d="M4 17v2"></path>
+                        <path d="M5 18H3"></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="space-y-2">
+                    <h3 class="text-xl font-semibold text-foreground">
+                      Risk Prediction
+                    </h3>
+                    <p class="text-muted-foreground text-sm leading-relaxed">
+                      The trained model outputs cardiovascular disease risk
+                      probability along with interpretable prediction confidence
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            data-slot="card"
+            class="text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm border-accent/20 bg-accent/5"
+          >
+            <div class="p-6 md:p-8">
+              <div class="flex items-start gap-4">
+                <div class="bg-accent/20 p-3 rounded-lg shrink-0">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-brain h-6 w-6 text-accent"
+                  >
+                    <path
+                      d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"
+                    ></path>
+                    <path
+                      d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"
+                    ></path>
+                    <path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"></path>
+                    <path d="M17.599 6.5a3 3 0 0 0 .399-1.375"></path>
+                    <path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"></path>
+                    <path d="M3.477 10.896a4 4 0 0 1 .585-.396"></path>
+                    <path d="M19.938 10.5a4 4 0 0 1 .585.396"></path>
+                    <path d="M6 18a4 4 0 0 1-1.967-.516"></path>
+                    <path d="M19.967 17.484A4 4 0 0 1 18 18"></path>
+                  </svg>
+                </div>
+                <div class="space-y-2">
+                  <h3 class="text-xl font-semibold text-foreground">
+                    Scikit-learn Based Implementation
+                  </h3>
+                  <p class="text-muted-foreground leading-relaxed">
+                    Our machine learning pipeline is implemented using
+                    well-established algorithms from the scikit-learn library.
+                    The project emphasizes correct data preprocessing, feature
+                    engineering, model training, evaluation, and deployment.
+                    NumPy and Pandas are used for numerical computation and data
+                    handling, while scikit-learn provides reliable and
+                    industry-standard machine learning models for accurate
+                    prediction.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="py-20 container mx-auto px-4 bg-secondary/30">
+        <div class="max-w-7xl mx-auto space-y-12">
+          <div class="text-center space-y-4">
+            <div
+              class="inline-block bg-chart-1/10 text-chart-1 px-4 py-2 rounded-full text-sm font-semibold"
+            >
+              Performance Metrics
+            </div>
+            <h2 class="text-4xl md:text-5xl font-bold text-balance">
+              Model Analytics &amp; Insights
+            </h2>
+            <p
+              class="text-lg text-muted-foreground text-pretty max-w-2xl mx-auto"
+            >
+              Comprehensive visualization of model performance, training
+              metrics, and feature importance
+            </p>
+          </div>
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div
+              data-slot="card"
+              class="text-card-foreground flex flex-col gap-6 rounded-xl border shadow-sm border-primary/20 bg-card p-6"
+            >
+              <div class="space-y-4">
+                <div class="space-y-2">
+                  <h3 class="text-xl font-semibold text-foreground">
+                    Model Accuracy Comparison
+                  </h3>
+                  <p class="text-sm text-muted-foreground">
+                    Performance across different algorithms
+                  </p>
+                </div>
+                <div
+                  class="recharts-responsive-container"
+                  style="width: 100%; height: 300px; min-width: 0"
+                ></div>
+              </div>
+            </div>
+            <div
+              data-slot="card"
+              class="text-card-foreground flex flex-col gap-6 rounded-xl border shadow-sm border-primary/20 bg-card p-6"
+            >
+              <div class="space-y-4">
+                <div class="space-y-2">
+                  <h3 class="text-xl font-semibold text-foreground">
+                    ROC Curve
+                  </h3>
+                  <p class="text-sm text-muted-foreground">
+                    Model discrimination ability (AUC =
+                    <!-- -->0.000<!-- -->)
+                  </p>
+                </div>
+                <div
+                  class="recharts-responsive-container"
+                  style="width: 100%; height: 300px; min-width: 0"
+                ></div>
+              </div>
+            </div>
+            <div
+              data-slot="card"
+              class="text-card-foreground flex flex-col gap-6 rounded-xl border shadow-sm border-primary/20 bg-card p-6"
+            >
+              <div class="space-y-4">
+                <div class="space-y-2">
+                  <h3 class="text-xl font-semibold text-foreground">
+                    Confusion Matrix
+                  </h3>
+                  <p class="text-sm text-muted-foreground">
+                    Classification accuracy breakdown
+                  </p>
+                </div>
+                <div class="grid grid-cols-2 gap-2 p-4">
+                  <div
+                    class="aspect-square bg-chart-3/20 border-2 border-chart-3 rounded-lg flex flex-col items-center justify-center p-4 hover:scale-105 transition-transform"
+                  >
+                    <div class="text-2xl font-bold text-chart-3">5454</div>
+                    <div class="text-xs text-muted-foreground text-center mt-2">
+                      True Negative
+                    </div>
+                    <div class="text-xs text-muted-foreground">
+                      (Correct: No Disease)
+                    </div>
+                  </div>
+                  <div
+                    class="aspect-square bg-destructive/20 border-2 border-destructive rounded-lg flex flex-col items-center justify-center p-4 hover:scale-105 transition-transform"
+                  >
+                    <div class="text-2xl font-bold text-destructive">1550</div>
+                    <div class="text-xs text-muted-foreground text-center mt-2">
+                      False Positive
+                    </div>
+                    <div class="text-xs text-muted-foreground">
+                      (Error: Predicted Disease)
+                    </div>
+                  </div>
+                  <div
+                    class="aspect-square bg-destructive/20 border-2 border-destructive rounded-lg flex flex-col items-center justify-center p-4 hover:scale-105 transition-transform"
+                  >
+                    <div class="text-2xl font-bold text-destructive">2093</div>
+                    <div class="text-xs text-muted-foreground text-center mt-2">
+                      False Negative
+                    </div>
+                    <div class="text-xs text-muted-foreground">
+                      (Error: Missed Disease)
+                    </div>
+                  </div>
+                  <div
+                    class="aspect-square bg-chart-1/20 border-2 border-chart-1 rounded-lg flex flex-col items-center justify-center p-4 hover:scale-105 transition-transform"
+                  >
+                    <div class="text-2xl font-bold text-chart-1">4903</div>
+                    <div class="text-xs text-muted-foreground text-center mt-2">
+                      True Positive
+                    </div>
+                    <div class="text-xs text-muted-foreground">
+                      (Correct: Disease)
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="text-xs text-muted-foreground text-center pt-2 border-t border-border"
+                >
+                  Total Predictions: 14,000 | Accuracy: 73.97%
+                </div>
+              </div>
+            </div>
+            <div
+              data-slot="card"
+              class="text-card-foreground flex flex-col gap-6 rounded-xl border shadow-sm border-primary/20 bg-card p-6 h-full"
+            >
+              <div class="space-y-4 h-full flex flex-col">
+                <div class="space-y-2">
+                  <h3 class="text-xl font-semibold text-foreground">
+                    Feature Importance
+                  </h3>
+                  <p class="text-sm text-muted-foreground">
+                    Impact of each feature on predictions
+                  </p>
+                </div>
+                <div class="flex-1">
+                  <div
+                    class="recharts-responsive-container"
+                    style="width: 100%; height: 100%; min-width: 0"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            data-slot="card"
+            class="text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm border-primary/20 bg-card"
+          >
+            <div class="p-6 md:p-8">
+              <h3 class="text-2xl font-bold text-foreground mb-6">
+                Key Performance Indicators
+              </h3>
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="text-center space-y-2">
+                  <div class="text-3xl md:text-4xl font-bold text-chart-1">
+                    73.97%
+                  </div>
+                  <div class="text-sm text-muted-foreground">Accuracy</div>
+                </div>
+                <div class="text-center space-y-2">
+                  <div class="text-3xl md:text-4xl font-bold text-chart-2">
+                    75.98%
+                  </div>
+                  <div class="text-sm text-muted-foreground">Precision</div>
+                </div>
+                <div class="text-center space-y-2">
+                  <div class="text-3xl md:text-4xl font-bold text-chart-3">
+                    70.08%
+                  </div>
+                  <div class="text-sm text-muted-foreground">Recall</div>
+                </div>
+                <div class="text-center space-y-2">
+                  <div class="text-3xl md:text-4xl font-bold text-accent">
+                    0.73
+                  </div>
+                  <div class="text-sm text-muted-foreground">F1-Score</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer class="border-t border-border bg-card">
+        <div class="container mx-auto px-4 py-12">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            <div class="space-y-4">
+              <div class="flex items-center gap-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-heart h-6 w-6 text-primary"
+                >
+                  <path
+                    d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"
+                  ></path></svg
+                ><span class="text-xl font-bold text-foreground"
+                  >CardioPredict AI</span
+                >
+              </div>
+              <p class="text-sm text-muted-foreground leading-relaxed">
+                An academic machine learning project for cardiovascular disease
+                prediction using scikit-learn models and a complete end-to-end
+                ML pipeline.
+              </p>
+            </div>
+            <div class="space-y-4">
+              <h3 class="text-lg font-semibold text-foreground">
+                Project Details
+              </h3>
+              <ul class="space-y-2 text-sm text-muted-foreground">
+                <li>Phase 5: Backend &amp; Deployment</li>
+                <li>Dataset: Kaggle CVD Dataset</li>
+                <li>Framework: Next.js + FastAPI</li>
+                <li>Libraries: NumPy, Pandas, Matplotlib, Scikit-learn</li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="pt-8 border-t border-border text-center text-sm text-muted-foreground"
+          >
+            <p>
+              © 2025 CardioPredict AI. Academic Project - For Educational
+              Purposes Only.
+            </p>
+          </div>
+        </div>
+      </footer>
+    </main>
+    <!--$--><!--/$--><!--$!--><template
+      data-dgst="BAILOUT_TO_CLIENT_SIDE_RENDERING"
+    ></template
+    ><!--/$-->
+    <script
+      src="/_next/static/chunks/14ccd08bdbbc15eb.js"
+      id="_R_"
+      async=""
+    ></script>
+    <script>
+      (self.__next_f = self.__next_f || []).push([0]);
+    </script>
+    <script>
+      self.__next_f.push([
+        1,
+        '1:"$Sreact.fragment"\n2:I[24946,["/_next/static/chunks/a25ed3e656d6aa44.js","/_next/static/chunks/b2ba12d1cc35e0fa.js"],"default"]\n3:I[84687,["/_next/static/chunks/a25ed3e656d6aa44.js","/_next/static/chunks/b2ba12d1cc35e0fa.js"],"default"]\n4:I[98440,["/_next/static/chunks/21c0d51b2dfd782c.js"],"Analytics"]\n5:I[87625,["/_next/static/chunks/21c0d51b2dfd782c.js","/_next/static/chunks/0cf22d5447adfe03.js","/_next/static/chunks/4ae0c8f53c6e9334.js"],"default"]\n6:I[41232,["/_next/static/chunks/21c0d51b2dfd782c.js","/_next/static/chunks/0cf22d5447adfe03.js","/_next/static/chunks/4ae0c8f53c6e9334.js"],"default"]\n12:I[56625,[],"default"]\n:HL["/_next/static/chunks/c6566460d0f2b7e0.css","style"]\n:HL["/_next/static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2","font",{"crossOrigin":"","type":"font/woff2"}]\n',
+      ]);
+    </script>
+    <script>
+      self.__next_f.push([
+        1,
+        '0:{"P":null,"b":"u1B30S-Yx8YzYvrjUNy7j","c":["",""],"q":"","i":false,"f":[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",true],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/c6566460d0f2b7e0.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/21c0d51b2dfd782c.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":["$","body",null,{"className":"inter_5972bc34-module__OU16Qa__className antialiased","children":[["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}],["$","$L4",null,{}]]}]}]]}],{"children":[["$","$1","c",{"children":[["$","main",null,{"className":"min-h-screen","children":[["$","$L5",null,{}],["$","$L6",null,{}],["$","section",null,{"className":"py-12 container mx-auto px-4","children":["$","div",null,{"data-slot":"card","className":"text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm max-w-4xl mx-auto border-destructive/50 bg-destructive/5","children":["$","div",null,{"className":"p-6 md:p-8 space-y-4","children":["$","div",null,{"className":"flex items-start gap-4","children":[["$","div",null,{"className":"bg-destructive/20 p-3 rounded-lg shrink-0","children":["$","svg",null,{"ref":"$undefined","xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2,"strokeLinecap":"round","strokeLinejoin":"round","className":"lucide lucide-triangle-alert h-6 w-6 text-destructive","children":[["$","path","wmoenq",{"d":"m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"}],["$","path","juzpu7",{"d":"M12 9v4"}],["$","path","p32p05",{"d":"M12 17h.01"}],"$undefined"]}]}],["$","div",null,{"className":"space-y-3 flex-1","children":[["$","h2",null,{"className":"text-2xl font-bold text-foreground flex items-center gap-2","children":"Medical Disclaimer"}],["$","div",null,{"className":"space-y-2 text-muted-foreground leading-relaxed","children":[["$","p",null,{"children":[["$","strong",null,{"className":"text-foreground","children":"Important:"}]," This AI model is designed for educational and research purposes only. It should NOT be used as a substitute for professional medical advice, diagnosis, or treatment."]}],["$","ul",null,{"className":"list-disc list-inside space-y-1 ml-4","children":[["$","li",null,{"children":"Always seek the advice of qualified healthcare providers"}],["$","li",null,{"children":"Never disregard professional medical advice based on this prediction"}],["$","li",null,{"children":"This tool is part of an ML/DL academic project"}],["$","li",null,{"children":"Results should be validated by medical professionals"}]]}],["$","p",null,{"className":"pt-2 flex items-center gap-2 text-sm","children":[["$","svg",null,{"ref":"$undefined","xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2,"strokeLinecap":"round","strokeLinejoin":"round","className":"lucide lucide-shield-alert h-4 w-4 text-destructive","children":[["$","path","oel41y",{"d":"M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"}],"$L7","$L8","$undefined"]}],"$L9"]}]]}]]}]]}]}]}]}],"$La","$Lb","$Lc","$Ld"]}],["$Le","$Lf"],"$L10"]}],{},null,false,false]},null,false,false],"$L11",false]],"m":"$undefined","G":["$12",[]],"S":true}\n',
+      ]);
+    </script>
+    <script>
+      self.__next_f.push([
+        1,
+        '1b:I[55744,["/_next/static/chunks/21c0d51b2dfd782c.js","/_next/static/chunks/0cf22d5447adfe03.js","/_next/static/chunks/4ae0c8f53c6e9334.js"],"default"]\n1c:I[2556,["/_next/static/chunks/a25ed3e656d6aa44.js","/_next/static/chunks/b2ba12d1cc35e0fa.js"],"OutletBoundary"]\n1d:"$Sreact.suspense"\n1f:I[2556,["/_next/static/chunks/a25ed3e656d6aa44.js","/_next/static/chunks/b2ba12d1cc35e0fa.js"],"ViewportBoundary"]\n21:I[2556,["/_next/static/chunks/a25ed3e656d6aa44.js","/_next/static/chunks/b2ba12d1cc35e0fa.js"],"MetadataBoundary"]\n7:["$","path","1got3b",{"d":"M12 8v4"}]\n8:["$","path","1drbdi",{"d":"M12 16h.01"}]\n9:["$","span",null,{"children":"By using this tool, you acknowledge that you understand and accept these limitations."}]\n',
+      ]);
+    </script>
+    <script>
+      self.__next_f.push([
+        1,
+        'a:["$","section",null,{"id":"model-info","className":"py-20 container mx-auto px-4 bg-secondary/30","children":["$","div",null,{"className":"max-w-6xl mx-auto space-y-12","children":[["$","div",null,{"className":"text-center space-y-4","children":[["$","div",null,{"className":"inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold","children":"Model Information"}],["$","h2",null,{"className":"text-4xl md:text-5xl font-bold text-balance","children":"Powered by Advanced Machine Learning"}],["$","p",null,{"className":"text-lg text-muted-foreground text-pretty max-w-2xl mx-auto","children":"Our prediction model leverages well-established machine learning algorithms from scikit-learn as part of an academic ML/DL project, focusing on data preprocessing, model selection, and performance evaluation."}]]}],["$","div",null,{"className":"grid grid-cols-1 md:grid-cols-2 gap-6","children":[["$","div","0",{"data-slot":"card","className":"text-card-foreground flex flex-col gap-6 rounded-xl border shadow-sm p-6 border-primary/20 bg-card hover:border-primary/50 transition-all duration-300 hover:scale-105","children":["$","div",null,{"className":"flex items-start gap-4","children":[["$","div",null,{"className":"bg-primary/20 p-3 rounded-lg shrink-0","children":["$","svg",null,{"ref":"$undefined","xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2,"strokeLinecap":"round","strokeLinejoin":"round","className":"lucide lucide-brain h-6 w-6 text-primary","children":[["$","path","l5xja",{"d":"M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"}],["$","path","ep3f8r",{"d":"M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"}],["$","path","1p4c4q",{"d":"M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"}],["$","path","tmeiqw",{"d":"M17.599 6.5a3 3 0 0 0 .399-1.375"}],["$","path","105sqy",{"d":"M6.003 5.125A3 3 0 0 0 6.401 6.5"}],["$","path","ql3yin",{"d":"M3.477 10.896a4 4 0 0 1 .585-.396"}],["$","path","1qfode",{"d":"M19.938 10.5a4 4 0 0 1 .585.396"}],["$","path","2e4loj",{"d":"M6 18a4 4 0 0 1-1.967-.516"}],["$","path","159ez6",{"d":"M19.967 17.484A4 4 0 0 1 18 18"}],"$undefined"]}]}],["$","div",null,{"className":"space-y-2","children":[["$","h3",null,{"className":"text-xl font-semibold text-foreground","children":"Sklearn-Based ML Model"}],["$","p",null,{"className":"text-muted-foreground leading-relaxed","children":"Built using proven machine learning algorithms from scikit-learn, focusing on proper feature engineering, preprocessing, and evaluation"}]]}]]}]}],["$","div","1",{"data-slot":"card","className":"text-card-foreground flex flex-col gap-6 rounded-xl border shadow-sm p-6 border-primary/20 bg-card hover:border-primary/50 transition-all duration-300 hover:scale-105","children":["$","div",null,{"className":"flex items-start gap-4","children":[["$","div",null,{"className":"bg-primary/20 p-3 rounded-lg shrink-0","children":["$","svg",null,{"ref":"$undefined","xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2,"strokeLinecap":"round","strokeLinejoin":"round","className":"lucide lucide-database h-6 w-6 text-primary","children":[["$","ellipse","msslwz",{"cx":"12","cy":"5","rx":"9","ry":"3"}],["$","path","1wlel7",{"d":"M3 5V19A9 3 0 0 0 21 19V5"}],["$","path","mv7ke4",{"d":"M3 12A9 3 0 0 0 21 12"}],"$undefined"]}]}],["$","div",null,{"className":"space-y-2","children":[["$","h3",null,{"className":"text-xl font-semibold text-foreground","children":"Kaggle Cardiovascular Dataset"}],["$","p",null,{"className":"text-muted-foreground leading-relaxed","children":"Trained on 70,000 patient records from the Cardiovascular Disease Dataset, ensuring reliable learning and real-world relevance"}]]}]]}]}],["$","div","2",{"data-slot":"card","className":"text-card-foreground flex flex-col gap-6 rounded-xl border shadow-sm p-6 border-primary/20 bg-card hover:border-primary/50 transition-all duration-300 hover:scale-105","children":"$L13"}],"$L14"]}],"$L15"]}]}]\n',
+      ]);
+    </script>
+    <script>
+      self.__next_f.push([
+        1,
+        'b:["$","section",null,{"className":"py-20 container mx-auto px-4","children":["$","div",null,{"className":"max-w-6xl mx-auto space-y-12","children":[["$","div",null,{"className":"text-center space-y-4","children":[["$","div",null,{"className":"inline-block bg-accent/10 text-accent px-4 py-2 rounded-full text-sm font-semibold","children":"How It Works"}],["$","h2",null,{"className":"text-4xl md:text-5xl font-bold text-balance","children":"Prediction Workflow"}],["$","p",null,{"className":"text-lg text-muted-foreground text-pretty max-w-2xl mx-auto","children":"Our model follows a rigorous 4-step process to deliver accurate cardiovascular disease risk assessments"}]]}],["$","div",null,{"className":"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6","children":[["$","div","0",{"className":"relative","children":[["$","div",null,{"data-slot":"card","className":"text-card-foreground flex flex-col gap-6 rounded-xl border shadow-sm p-6 border-primary/20 bg-card h-full hover:border-primary/50 transition-all duration-300","children":["$","div",null,{"className":"space-y-4","children":[["$","div",null,{"className":"flex items-center justify-between","children":[["$","div",null,{"className":"text-5xl font-bold text-primary/20","children":"01"}],["$","div",null,{"className":"bg-primary/20 p-3 rounded-lg","children":["$","svg",null,{"ref":"$undefined","xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2,"strokeLinecap":"round","strokeLinejoin":"round","className":"lucide lucide-file-input h-6 w-6 text-primary","children":[["$","path","1pf5j1",{"d":"M4 22h14a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v4"}],["$","path","tnqrlb",{"d":"M14 2v4a2 2 0 0 0 2 2h4"}],["$","path","jfw4w8",{"d":"M2 15h10"}],["$","path","112psh",{"d":"m9 18 3-3-3-3"}],"$undefined"]}]}]]}],["$","div",null,{"className":"space-y-2","children":[["$","h3",null,{"className":"text-xl font-semibold text-foreground","children":"Data Input"}],["$","p",null,{"className":"text-muted-foreground text-sm leading-relaxed","children":"Patient health metrics are collected including age, blood pressure, cholesterol levels, glucose values, and lifestyle-related factors"}]]}]]}]}],["$","div",null,{"className":"hidden lg:block absolute top-1/2 -right-3 w-6 h-0.5 bg-primary/30"}]]}],["$","div","1",{"className":"relative","children":[["$","div",null,{"data-slot":"card","className":"text-card-foreground flex flex-col gap-6 rounded-xl border shadow-sm p-6 border-primary/20 bg-card h-full hover:border-primary/50 transition-all duration-300","children":["$","div",null,{"className":"space-y-4","children":[["$","div",null,{"className":"flex items-center justify-between","children":[["$","div",null,{"className":"text-5xl font-bold text-primary/20","children":"02"}],["$","div",null,{"className":"bg-primary/20 p-3 rounded-lg","children":["$","svg",null,{"ref":"$undefined","xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2,"strokeLinecap":"round","strokeLinejoin":"round","className":"lucide lucide-chart-column h-6 w-6 text-primary","children":[["$","path","c24i48",{"d":"M3 3v16a2 2 0 0 0 2 2h16"}],["$","path","2bz60n",{"d":"M18 17V9"}],["$","path","1frdt8",{"d":"M13 17V5"}],["$","path","17ska0",{"d":"M8 17v-3"}],"$undefined"]}]}]]}],["$","div",null,{"className":"space-y-2","children":[["$","h3",null,{"className":"text-xl font-semibold text-foreground","children":"Preprocessing"}],["$","p",null,{"className":"text-muted-foreground text-sm leading-relaxed","children":"Input data is cleaned, encoded, scaled, and validated using standard preprocessing techniques to ensure consistency and model readiness"}]]}]]}]}],["$","div",null,{"className":"hidden lg:block absolute top-1/2 -right-3 w-6 h-0.5 bg-primary/30"}]]}],["$","div","2",{"className":"relative","children":[["$","div",null,{"data-slot":"card","className":"text-card-foreground flex flex-col gap-6 rounded-xl border shadow-sm p-6 border-primary/20 bg-card h-full hover:border-primary/50 transition-all duration-300","children":["$","div",null,{"className":"space-y-4","children":["$L16","$L17"]}]}],"$L18"]}],"$L19"]}],"$L1a"]}]}]\n',
+      ]);
+    </script>
+    <script>
+      self.__next_f.push([1, 'c:["$","$L1b",null,{}]\n']);
+    </script>
+    <script>
+      self.__next_f.push([
+        1,
+        'd:["$","footer",null,{"className":"border-t border-border bg-card","children":["$","div",null,{"className":"container mx-auto px-4 py-12","children":[["$","div",null,{"className":"grid grid-cols-1 md:grid-cols-3 gap-8 mb-8","children":[["$","div",null,{"className":"space-y-4","children":[["$","div",null,{"className":"flex items-center gap-2","children":[["$","svg",null,{"ref":"$undefined","xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2,"strokeLinecap":"round","strokeLinejoin":"round","className":"lucide lucide-heart h-6 w-6 text-primary","children":[["$","path","c3ymky",{"d":"M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"}],"$undefined"]}],["$","span",null,{"className":"text-xl font-bold text-foreground","children":"CardioPredict AI"}]]}],["$","p",null,{"className":"text-sm text-muted-foreground leading-relaxed","children":"An academic machine learning project for cardiovascular disease prediction using scikit-learn models and a complete end-to-end ML pipeline."}]]}],["$","div",null,{"className":"space-y-4","children":[["$","h3",null,{"className":"text-lg font-semibold text-foreground","children":"Project Details"}],["$","ul",null,{"className":"space-y-2 text-sm text-muted-foreground","children":[["$","li",null,{"children":"Phase 5: Backend \u0026 Deployment"}],["$","li",null,{"children":"Dataset: Kaggle CVD Dataset"}],["$","li",null,{"children":"Framework: Next.js + FastAPI"}],["$","li",null,{"children":"Libraries: NumPy, Pandas, Matplotlib, Scikit-learn"}]]}]]}]]}],["$","div",null,{"className":"pt-8 border-t border-border text-center text-sm text-muted-foreground","children":["$","p",null,{"children":"© 2025 CardioPredict AI. Academic Project - For Educational Purposes Only."}]}]]}]}]\n',
+      ]);
+    </script>
+    <script>
+      self.__next_f.push([
+        1,
+        'e:["$","script","script-0",{"src":"/_next/static/chunks/0cf22d5447adfe03.js","async":true,"nonce":"$undefined"}]\nf:["$","script","script-1",{"src":"/_next/static/chunks/4ae0c8f53c6e9334.js","async":true,"nonce":"$undefined"}]\n10:["$","$L1c",null,{"children":["$","$1d",null,{"name":"Next.MetadataOutlet","children":"$@1e"}]}]\n11:["$","$1","h",{"children":[null,["$","$L1f",null,{"children":"$@20"}],["$","div",null,{"hidden":true,"children":["$","$L21",null,{"children":["$","$1d",null,{"name":"Next.Metadata","children":"$@22"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}]\n',
+      ]);
+    </script>
+    <script>
+      self.__next_f.push([
+        1,
+        '13:["$","div",null,{"className":"flex items-start gap-4","children":[["$","div",null,{"className":"bg-primary/20 p-3 rounded-lg shrink-0","children":["$","svg",null,{"ref":"$undefined","xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2,"strokeLinecap":"round","strokeLinejoin":"round","className":"lucide lucide-target h-6 w-6 text-primary","children":[["$","circle","1mglay",{"cx":"12","cy":"12","r":"10"}],["$","circle","1vlfrh",{"cx":"12","cy":"12","r":"6"}],["$","circle","1c9p78",{"cx":"12","cy":"12","r":"2"}],"$undefined"]}]}],["$","div",null,{"className":"space-y-2","children":[["$","h3",null,{"className":"text-xl font-semibold text-foreground","children":"Reliable Performance"}],["$","p",null,{"className":"text-muted-foreground leading-relaxed","children":"Achieves strong predictive performance with high accuracy and ROC-AUC score, validated through systematic testing"}]]}]]}]\n14:["$","div","3",{"data-slot":"card","className":"text-card-foreground flex flex-col gap-6 rounded-xl border shadow-sm p-6 border-primary/20 bg-card hover:border-primary/50 transition-all duration-300 hover:scale-105","children":["$","div",null,{"className":"flex items-start gap-4","children":[["$","div",null,{"className":"bg-primary/20 p-3 rounded-lg shrink-0","children":["$","svg",null,{"ref":"$undefined","xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2,"strokeLinecap":"round","strokeLinejoin":"round","className":"lucide lucide-zap h-6 w-6 text-primary","children":[["$","path","1xq2db",{"d":"M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"}],"$undefined"]}]}],["$","div",null,{"className":"space-y-2","children":[["$","h3",null,{"className":"text-xl font-semibold text-foreground","children":"Real-time Inference"}],["$","p",null,{"className":"text-muted-foreground leading-relaxed","children":"Fast cardiovascular risk prediction using optimized sklearn pipelines integrated with a real-time backend API"}]]}]]}]}]\n',
+      ]);
+    </script>
+    <script>
+      self.__next_f.push([
+        1,
+        '15:["$","div",null,{"data-slot":"card","className":"text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm border-primary/20 bg-card/50","children":["$","div",null,{"className":"p-6 md:p-8 space-y-6","children":[["$","h3",null,{"className":"text-2xl font-bold text-foreground","children":"Technical Specifications"}],["$","div",null,{"className":"grid grid-cols-1 md:grid-cols-2 gap-6","children":[["$","div",null,{"className":"space-y-3","children":[["$","div",null,{"className":"flex justify-between items-center py-2 border-b border-border","children":[["$","span",null,{"className":"text-muted-foreground","children":"Algorithm"}],["$","span",null,{"className":"font-semibold text-foreground","children":"CatBoostClassifier"}]]}],["$","div",null,{"className":"flex justify-between items-center py-2 border-b border-border","children":[["$","span",null,{"className":"text-muted-foreground","children":"Training Data"}],["$","span",null,{"className":"font-semibold text-foreground","children":"70,000 samples"}]]}],["$","div",null,{"className":"flex justify-between items-center py-2 border-b border-border","children":[["$","span",null,{"className":"text-muted-foreground","children":"Features"}],["$","span",null,{"className":"font-semibold text-foreground","children":"11 input variables"}]]}]]}],["$","div",null,{"className":"space-y-3","children":[["$","div",null,{"className":"flex justify-between items-center py-2 border-b border-border","children":[["$","span",null,{"className":"text-muted-foreground","children":"Accuracy"}],["$","span",null,{"className":"font-semibold text-primary","children":"73.97%"}]]}],["$","div",null,{"className":"flex justify-between items-center py-2 border-b border-border","children":[["$","span",null,{"className":"text-muted-foreground","children":"ROC-AUC Score"}],["$","span",null,{"className":"font-semibold text-accent","children":"0.805"}]]}],["$","div",null,{"className":"flex justify-between items-center py-2 border-b border-border","children":[["$","span",null,{"className":"text-muted-foreground","children":"Libraries Used"}],["$","span",null,{"className":"font-semibold text-foreground","children":"NumPy, Pandas, Scikit-learn"}]]}]]}]]}]]}]}]\n',
+      ]);
+    </script>
+    <script>
+      self.__next_f.push([
+        1,
+        '16:["$","div",null,{"className":"flex items-center justify-between","children":[["$","div",null,{"className":"text-5xl font-bold text-primary/20","children":"03"}],["$","div",null,{"className":"bg-primary/20 p-3 rounded-lg","children":["$","svg",null,{"ref":"$undefined","xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2,"strokeLinecap":"round","strokeLinejoin":"round","className":"lucide lucide-brain h-6 w-6 text-primary","children":[["$","path","l5xja",{"d":"M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"}],["$","path","ep3f8r",{"d":"M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"}],["$","path","1p4c4q",{"d":"M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"}],["$","path","tmeiqw",{"d":"M17.599 6.5a3 3 0 0 0 .399-1.375"}],["$","path","105sqy",{"d":"M6.003 5.125A3 3 0 0 0 6.401 6.5"}],["$","path","ql3yin",{"d":"M3.477 10.896a4 4 0 0 1 .585-.396"}],["$","path","1qfode",{"d":"M19.938 10.5a4 4 0 0 1 .585.396"}],["$","path","2e4loj",{"d":"M6 18a4 4 0 0 1-1.967-.516"}],["$","path","159ez6",{"d":"M19.967 17.484A4 4 0 0 1 18 18"}],"$undefined"]}]}]]}]\n17:["$","div",null,{"className":"space-y-2","children":[["$","h3",null,{"className":"text-xl font-semibold text-foreground","children":"ML Algorithm"}],["$","p",null,{"className":"text-muted-foreground text-sm leading-relaxed","children":"A machine learning model built using scikit-learn algorithms processes the input features through a trained prediction pipeline"}]]}]\n18:["$","div",null,{"className":"hidden lg:block absolute top-1/2 -right-3 w-6 h-0.5 bg-primary/30"}]\n',
+      ]);
+    </script>
+    <script>
+      self.__next_f.push([
+        1,
+        '19:["$","div","3",{"className":"relative","children":[["$","div",null,{"data-slot":"card","className":"text-card-foreground flex flex-col gap-6 rounded-xl border shadow-sm p-6 border-primary/20 bg-card h-full hover:border-primary/50 transition-all duration-300","children":["$","div",null,{"className":"space-y-4","children":[["$","div",null,{"className":"flex items-center justify-between","children":[["$","div",null,{"className":"text-5xl font-bold text-primary/20","children":"04"}],["$","div",null,{"className":"bg-primary/20 p-3 rounded-lg","children":["$","svg",null,{"ref":"$undefined","xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2,"strokeLinecap":"round","strokeLinejoin":"round","className":"lucide lucide-sparkles h-6 w-6 text-primary","children":[["$","path","4pj2yx",{"d":"M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"}],["$","path","1olli1",{"d":"M20 3v4"}],["$","path","1gvqau",{"d":"M22 5h-4"}],["$","path","vumght",{"d":"M4 17v2"}],["$","path","zchphs",{"d":"M5 18H3"}],"$undefined"]}]}]]}],["$","div",null,{"className":"space-y-2","children":[["$","h3",null,{"className":"text-xl font-semibold text-foreground","children":"Risk Prediction"}],["$","p",null,{"className":"text-muted-foreground text-sm leading-relaxed","children":"The trained model outputs cardiovascular disease risk probability along with interpretable prediction confidence"}]]}]]}]}],false]}]\n',
+      ]);
+    </script>
+    <script>
+      self.__next_f.push([
+        1,
+        '1a:["$","div",null,{"data-slot":"card","className":"text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm border-accent/20 bg-accent/5","children":["$","div",null,{"className":"p-6 md:p-8","children":["$","div",null,{"className":"flex items-start gap-4","children":[["$","div",null,{"className":"bg-accent/20 p-3 rounded-lg shrink-0","children":["$","svg",null,{"ref":"$undefined","xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2,"strokeLinecap":"round","strokeLinejoin":"round","className":"lucide lucide-brain h-6 w-6 text-accent","children":[["$","path","l5xja",{"d":"M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"}],["$","path","ep3f8r",{"d":"M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"}],["$","path","1p4c4q",{"d":"M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"}],["$","path","tmeiqw",{"d":"M17.599 6.5a3 3 0 0 0 .399-1.375"}],["$","path","105sqy",{"d":"M6.003 5.125A3 3 0 0 0 6.401 6.5"}],["$","path","ql3yin",{"d":"M3.477 10.896a4 4 0 0 1 .585-.396"}],["$","path","1qfode",{"d":"M19.938 10.5a4 4 0 0 1 .585.396"}],["$","path","2e4loj",{"d":"M6 18a4 4 0 0 1-1.967-.516"}],["$","path","159ez6",{"d":"M19.967 17.484A4 4 0 0 1 18 18"}],"$undefined"]}]}],["$","div",null,{"className":"space-y-2","children":[["$","h3",null,{"className":"text-xl font-semibold text-foreground","children":"Scikit-learn Based Implementation"}],["$","p",null,{"className":"text-muted-foreground leading-relaxed","children":"Our machine learning pipeline is implemented using well-established algorithms from the scikit-learn library. The project emphasizes correct data preprocessing, feature engineering, model training, evaluation, and deployment. NumPy and Pandas are used for numerical computation and data handling, while scikit-learn provides reliable and industry-standard machine learning models for accurate prediction."}]]}]]}]}]}]\n',
+      ]);
+    </script>
+    <script>
+      self.__next_f.push([
+        1,
+        '20:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]\n',
+      ]);
+    </script>
+    <script>
+      self.__next_f.push([
+        1,
+        '23:I[83541,["/_next/static/chunks/a25ed3e656d6aa44.js","/_next/static/chunks/b2ba12d1cc35e0fa.js"],"IconMark"]\n22:[["$","title","0",{"children":"CardioPredict AI - Cardiovascular Disease Prediction"}],["$","meta","1",{"name":"description","content":"AI-powered cardiovascular disease risk assessment using machine learning"}],["$","meta","2",{"name":"generator","content":"v0.app"}],["$","link","3",{"rel":"icon","href":"/favicon.ico?favicon.0b3bf435.ico","sizes":"256x256","type":"image/x-icon"}],["$","link","4",{"rel":"icon","href":"/icon-light-32x32.png","media":"(prefers-color-scheme: light)"}],["$","link","5",{"rel":"icon","href":"/icon-dark-32x32.png","media":"(prefers-color-scheme: dark)"}],["$","link","6",{"rel":"icon","href":"/icon.svg","type":"image/svg+xml"}],["$","link","7",{"rel":"apple-touch-icon","href":"/apple-icon.png"}],["$","$L23","8",{}]]\n1e:null\n',
+      ]);
+    </script>
+  </body>
+</html>
