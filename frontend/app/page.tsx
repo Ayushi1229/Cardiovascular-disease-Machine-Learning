@@ -40,30 +40,49 @@ export default function Home() {
     smoke: "No",
     alco: "No",
     active: "Active",
-    model_name: "XGBoost",
+    model_name: "CatBoost",
   });
 
   const [result, setResult] = useState<any>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const [metrics, setMetrics] = useState<any[]>([]);
+  const fallbackMetricsObj: Record<string, number> = {
+    "Logistic Regression": 0.71924492081267,
+    "Random Forest": 0.7248440249560071,
+    "XGBoost": 0.7259638457846744,
+    "CatBoost": 0.7283634618461047,
+  };
+
+  const [metrics, setMetrics] = useState<any[]>(
+    Object.keys(fallbackMetricsObj).map((key) => ({
+      name: key,
+      accuracy: parseFloat((fallbackMetricsObj[key] * 100).toFixed(1)),
+    }))
+  );
   const [detailedMetrics, setDetailedMetrics] = useState<any>(null);
 
   useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/metrics`)
+    const baseUrl = process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:8000";
+
+    fetch(`${baseUrl}/metrics`)
       .then((res) => res.json())
       .then((data) => {
-        if (data && !data.error) {
+        if (data && !data.error && Object.keys(data).length > 0) {
           const formattedMetrics = Object.keys(data).map((key) => ({
             name: key,
             accuracy: parseFloat((data[key] * 100).toFixed(1)),
           }));
+          formattedMetrics.sort((a, b) => b.accuracy - a.accuracy);
           setMetrics(formattedMetrics);
+        } else {
+          console.warn("Metrics endpoint returned empty or error; using fallback metrics.");
         }
       })
-      .catch((err) => console.error("Failed to fetch metrics", err));
+      .catch((err) => {
+        console.error("Failed to fetch metrics", err);
+      });
 
-    fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/detailed_metrics`)
+    fetch(`${baseUrl}/detailed_metrics`)
       .then((res) => res.json())
       .then((data) => {
         if (data && !data.error) {
@@ -707,6 +726,7 @@ export default function Home() {
                       onChange={handleChange}
                       className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2.5 border text-gray-900 bg-gray-50"
                     >
+                      <option>CatBoost</option>
                       <option>XGBoost</option>
                       <option>Random Forest</option>
                       <option>Logistic Regression</option>

@@ -13,7 +13,8 @@ def load_assets():
     models = {
         "XGBoost": joblib.load("models/XGBClassifier_model.joblib"),
         "Random Forest": joblib.load("models/random_forest_model.joblib"),
-        "Logistic Regression": joblib.load("models/logistic_regression_model.joblib")
+        "Logistic Regression": joblib.load("models/logistic_regression_model.joblib"),
+        "CatBoost": joblib.load("models/CATBoostClassifier_model.joblib")
     }
     return scaler, models
 
