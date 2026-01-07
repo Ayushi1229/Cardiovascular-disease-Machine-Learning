@@ -59,7 +59,6 @@ export default function Home() {
             accuracy: parseFloat((data[key] * 100).toFixed(1)),
           }));
           setMetrics(formattedMetrics);
-          console.log(metrics);
         }
       })
       .catch((err) => console.error("Failed to fetch metrics", err));
@@ -97,8 +96,8 @@ export default function Home() {
         formData.cholesterol === "Low"
           ? 1
           : formData.cholesterol === "Normal"
-            ? 2
-            : 3,
+          ? 2
+          : 3,
       glucose:
         formData.glucose === "Low" ? 1 : formData.glucose === "Normal" ? 2 : 3,
       smoke: formData.smoke === "No" ? 0 : 1,
@@ -153,80 +152,89 @@ export default function Home() {
 
   const featureImportance = detailedMetrics?.feature_importance
     ? detailedMetrics.feature_importance.map((item: any) => ({
-      name: item.name,
-      value: parseFloat((item.value * 100).toFixed(1)),
-    }))
+        name: item.name,
+        value: parseFloat((item.value * 100).toFixed(1)),
+      }))
     : [
-      { name: "Systolic BP", value: 24.7 },
-      { name: "Diastolic BP", value: 14 },
-      { name: "Age", value: 14 },
-      { name: "Cholesterol", value: 12 },
-      { name: "Glucose", value: 10 },
-      { name: "Weight", value: 8 },
-      { name: "Active", value: 7 },
-      { name: "Smoke", value: 5 },
-      { name: "Alcohol", value: 3 },
-      { name: "Gender", value: 2 },
-      { name: "Height", value: 0.3 },
-    ];
+        { name: "Systolic BP", value: 24.7 },
+        { name: "Diastolic BP", value: 14 },
+        { name: "Age", value: 14 },
+        { name: "Cholesterol", value: 12 },
+        { name: "Glucose", value: 10 },
+        { name: "Weight", value: 8 },
+        { name: "Active", value: 7 },
+        { name: "Smoke", value: 5 },
+        { name: "Alcohol", value: 3 },
+        { name: "Gender", value: 2 },
+        { name: "Height", value: 0.3 },
+      ];
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-[#1a44c9] via-[#1636a0] to-[#0f256e] text-white selection:bg-blue-500 selection:text-white">
+    <main className="min-h-screen bg-gray-50 text-gray-900 font-sans">
       {/* Hero Section */}
-      <section className="relative w-full pt-32 pb-20 lg:pt-40 lg:pb-32 text-center">
-        {/* Background effects removed for flat royal blue theme */}
-
-        <div className="container relative mx-auto px-4 md:px-8 max-w-6xl">
-          <div className="text-center space-y-8 max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-900/50 border border-blue-500/30 text-blue-300 text-sm font-medium backdrop-blur-sm">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+      <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 text-white py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="inline-flex items-center gap-2 bg-blue-800/50 border border-blue-700 rounded-full px-4 py-1 mb-6">
+              <span className="relative flex h-3 w-3">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
               </span>
-              AI-Powered Health Analysis
+              <span className="text-sm font-medium text-blue-100">
+                AI Model Online
+              </span>
             </div>
-
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white mb-4">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 tracking-tight">
               CardioPredict AI
             </h1>
-
-            <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto font-medium">
-              Advanced cardiovascular disease risk assessment powered by machine learning
+            <p className="text-xl md:text-2xl text-blue-100 mb-10 max-w-2xl mx-auto leading-relaxed">
+              Advanced cardiovascular disease risk assessment powered by machine
+              learning
             </p>
-
-            <p className="text-base text-blue-200 max-w-2xl mx-auto pb-8 leading-relaxed">
-              Our AI model analyzes multiple health factors to provide accurate cardiovascular disease risk predictions, helping healthcare professionals make informed decisions.
+            <p className="text-lg text-blue-200 mb-12 max-w-3xl mx-auto">
+              Our AI model analyzes multiple health factors to provide accurate
+              cardiovascular disease risk predictions, helping healthcare
+              professionals make informed decisions.
             </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pb-16">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
               <button
                 onClick={scrollToPrediction}
-                className="group px-8 py-3 bg-white text-[#1a44c9] rounded-lg font-bold text-lg hover:bg-gray-50 transition-all shadow-lg flex items-center gap-2"
+                className="px-8 py-4 bg-white text-blue-900 rounded-lg font-bold text-lg hover:bg-blue-50 transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
               >
-                Get Prediction
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                Get Prediction <ArrowRight className="w-5 h-5" />
               </button>
-              <button className="px-8 py-3 bg-[#2a55da] text-white border border-[#4a75f5] rounded-lg font-bold text-lg hover:bg-[#3a65ea] transition-all">
+              <button className="px-8 py-4 bg-blue-800/50 border border-blue-700 text-white rounded-lg font-bold text-lg hover:bg-blue-800 transition-all flex items-center justify-center gap-2">
                 Learn More
               </button>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16 pt-8 max-w-4xl mx-auto">
-              <div>
-                <div className="text-4xl md:text-5xl font-bold text-white mb-2">
-                  {detailedMetrics ? (detailedMetrics.accuracy * 100).toFixed(2) : "72.60"}%
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto border-t border-blue-800/50 pt-12">
+              <div className="text-center">
+                <div className="text-4xl font-bold mb-1">
+                  {detailedMetrics
+                    ? (detailedMetrics.accuracy * 100).toFixed(2) + "%"
+                    : "73.97%"}
                 </div>
-                <div className="text-xs md:text-sm font-bold text-blue-200 uppercase tracking-widest">Accuracy</div>
-              </div>
-              <div>
-                <div className="text-4xl md:text-5xl font-bold text-white mb-2">70K</div>
-                <div className="text-xs md:text-sm font-bold text-blue-200 uppercase tracking-widest">Data Points</div>
-              </div>
-              <div>
-                <div className="text-4xl md:text-5xl font-bold text-white mb-2">
-                  {detailedMetrics ? detailedMetrics.roc_auc.toFixed(3) : "0.789"}
+                <div className="text-blue-300 text-sm uppercase tracking-wider">
+                  Accuracy
                 </div>
-                <div className="text-xs md:text-sm font-bold text-blue-200 uppercase tracking-widest">ROC-AUC</div>
+              </div>
+              <div className="text-center border-l border-r border-blue-800/50">
+                <div className="text-4xl font-bold mb-1">70K</div>
+                <div className="text-blue-300 text-sm uppercase tracking-wider">
+                  Data Points
+                </div>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl font-bold mb-1">
+                  {detailedMetrics
+                    ? detailedMetrics.roc_auc.toFixed(3)
+                    : "0.805"}
+                </div>
+                <div className="text-blue-300 text-sm uppercase tracking-wider">
+                  ROC-AUC
+                </div>
               </div>
             </div>
           </div>
@@ -234,72 +242,104 @@ export default function Home() {
       </section>
 
       {/* Medical Disclaimer */}
-      <section className="w-full bg-white/5 backdrop-blur-md border-b border-white/10 py-8 md:py-12">
-        <div className="container mx-auto px-4 md:px-8 max-w-6xl">
-          <div className="flex gap-4 max-w-4xl mx-auto items-center justify-center">
-            <AlertTriangle className="w-6 h-6 text-amber-400 shrink-0" />
-            <div className="space-y-2">
-              <h3 className="font-bold text-white text-lg">Medical Disclaimer</h3>
-              <p className="text-blue-100 text-sm">
-                This AI model is for <strong>educational purposes only</strong>. It should NOT replace professional medical advice.
+      <section className="bg-amber-50 border-b border-amber-100">
+        <div className="container mx-auto px-4 py-6">
+          <div className="flex items-start gap-4 max-w-4xl mx-auto">
+            <AlertTriangle className="w-6 h-6 text-amber-600 shrink-0 mt-1" />
+            <div>
+              <h3 className="font-bold text-amber-800 mb-1">
+                Medical Disclaimer
+              </h3>
+              <p className="text-amber-700 text-sm mb-2">
+                Important: This AI model is designed for educational and
+                research purposes only. It should NOT be used as a substitute
+                for professional medical advice, diagnosis, or treatment.
               </p>
-              <ul className="text-blue-200 text-sm list-disc list-inside space-y-1">
-                <li>Always consult qualified healthcare providers</li>
-                <li>Results must be validated by medical professionals</li>
-                <li>This is an academic ML/DL project</li>
+              <ul className="text-amber-700 text-sm list-disc list-inside space-y-1">
+                <li>Always seek the advice of qualified healthcare providers</li>
+                <li>
+                  Never disregard professional medical advice based on this
+                  prediction
+                </li>
+                <li>This tool is part of an ML/DL academic project</li>
+                <li>Results should be validated by medical professionals</li>
               </ul>
+              <p className="text-amber-700 text-xs mt-2 italic">
+                By using this tool, you acknowledge that you understand and
+                accept these limitations.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Model Information */}
-      <section className="w-full py-16 md:py-24">
-        <div className="container mx-auto px-4 md:px-8 max-w-6xl">
-          <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Model Information</h2>
-            <p className="text-blue-100 max-w-2xl mx-auto">
-              Built with scikit-learn, trained on the Kaggle Cardiovascular Disease dataset
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold mb-4 text-gray-900">
+              Model Information
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Powered by Advanced Machine Learning. Our prediction model
+              leverages well-established machine learning algorithms from
+              scikit-learn as part of an academic ML/DL project.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-            <div className="bg-white p-6 rounded-lg border border-gray-200 hover:shadow-lg transition-shadow">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="p-6 bg-gray-50 rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
               <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                 <Cpu className="w-6 h-6 text-blue-600" />
               </div>
-              <h3 className="font-bold text-gray-900 mb-2">ML Algorithm</h3>
-              <p className="text-gray-600 text-sm">CatBoost classifier with optimal hyperparameters</p>
+              <h3 className="font-bold text-lg mb-2 text-gray-900">
+                Sklearn-Based ML Model
+              </h3>
+              <p className="text-gray-600 text-sm">
+                Built using proven machine learning algorithms from
+                scikit-learn, focusing on proper feature engineering and
+                evaluation.
+              </p>
             </div>
-
-            <div className="bg-white p-6 rounded-lg border border-gray-200 hover:shadow-lg transition-shadow">
+            <div className="p-6 bg-gray-50 rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
               <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
                 <Database className="w-6 h-6 text-green-600" />
               </div>
-              <h3 className="font-bold text-gray-900 mb-2">Dataset</h3>
-              <p className="text-gray-600 text-sm">70,000 patient records from Kaggle</p>
+              <h3 className="font-bold text-lg mb-2 text-gray-900">
+                Kaggle Cardiovascular Dataset
+              </h3>
+              <p className="text-gray-600 text-sm">
+                Trained on 70,000 patient records from the Cardiovascular
+                Disease Dataset, ensuring reliable learning.
+              </p>
             </div>
-
-            <div className="bg-white p-6 rounded-lg border border-gray-200 hover:shadow-lg transition-shadow">
+            <div className="p-6 bg-gray-50 rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
               <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
                 <Shield className="w-6 h-6 text-purple-600" />
               </div>
-              <h3 className="font-bold text-gray-900 mb-2">Performance</h3>
-              <p className="text-gray-600 text-sm">73.97% accuracy with rigorous validation</p>
+              <h3 className="font-bold text-lg mb-2 text-gray-900">
+                Reliable Performance
+              </h3>
+              <p className="text-gray-600 text-sm">
+                Achieves strong predictive performance with high accuracy and
+                ROC-AUC score, validated through systematic testing.
+              </p>
             </div>
-
-            <div className="bg-white p-6 rounded-lg border border-gray-200 hover:shadow-lg transition-shadow">
+            <div className="p-6 bg-gray-50 rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
               <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
                 <Zap className="w-6 h-6 text-orange-600" />
               </div>
-              <h3 className="font-bold text-gray-900 mb-2">Real-time</h3>
-              <p className="text-gray-600 text-sm">Instant cardiovascular risk prediction</p>
+              <h3 className="font-bold text-lg mb-2 text-gray-900">
+                Real-time Inference
+              </h3>
+              <p className="text-gray-600 text-sm">
+                Fast cardiovascular risk prediction using optimized sklearn
+                pipelines integrated with a real-time backend API.
+              </p>
             </div>
           </div>
         </div>
       </section>
-
-
 
       {/* Technical Specifications */}
       {/* <section className="py-20 bg-gray-50">
@@ -371,13 +411,14 @@ export default function Home() {
         </div>
       </section> */}
 
-      <section className="py-20">
+      {/* How It Works */}
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold mb-4 text-white">
+            <h2 className="text-3xl font-bold mb-4 text-gray-900">
               How It Works
             </h2>
-            <p className="text-blue-100 max-w-2xl mx-auto">
+            <p className="text-gray-600 max-w-2xl mx-auto">
               Prediction Workflow. Our model follows a rigorous 4-step process
               to deliver accurate cardiovascular disease risk assessments.
             </p>
@@ -407,13 +448,13 @@ export default function Home() {
               },
             ].map((item, i) => (
               <div key={i} className="relative">
-                <div className="text-6xl font-bold text-white/10 absolute -top-8 -left-4 -z-10">
+                <div className="text-6xl font-bold text-gray-100 absolute -top-8 -left-4 -z-10">
                   {item.step}
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-white">
+                <h3 className="text-xl font-bold mb-3 text-gray-900">
                   {item.title}
                 </h3>
-                <p className="text-blue-100 text-sm leading-relaxed">
+                <p className="text-gray-600 text-sm leading-relaxed">
                   {item.desc}
                 </p>
               </div>
@@ -423,260 +464,262 @@ export default function Home() {
       </section>
 
       {/* Prediction Form Section */}
-      <section id="prediction-form" className="py-20">
+      <section id="prediction-form" className="py-20 bg-blue-50">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
-            <div className="bg-white border-b border-gray-100 p-8 text-center text-[#1a44c9]">
+            <div className="bg-blue-600 p-6 text-white text-center">
               <h2 className="text-2xl font-bold">Get Your Prediction</h2>
-              <p className="text-blue-600/80 mt-2">
+              <p className="text-blue-100">
                 Enter your health metrics below for an instant assessment
               </p>
             </div>
             <div className="p-8">
-              <form onSubmit={handleSubmit} className="space-y-8">
-                {/* Personal Information */}
-                <div className="space-y-4">
-                  <h3 className="text-lg font-semibold text-gray-900 border-b pb-2">Personal Information</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">Gender</label>
-                      <select
-                        name="gender"
-                        value={formData.gender}
-                        onChange={handleChange}
-                        className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-3 border text-gray-900 bg-gray-50 transition-colors"
-                      >
-                        <option>Female</option>
-                        <option>Male</option>
-                      </select>
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">Age (years)</label>
-                      <input
-                        type="number"
-                        name="age"
-                        value={formData.age}
-                        onChange={handleChange}
-                        min="10"
-                        max="100"
-                        className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-3 border text-gray-900 bg-gray-50 transition-colors"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">Height (cm)</label>
-                      <input
-                        type="number"
-                        name="height"
-                        value={formData.height}
-                        onChange={handleChange}
-                        min="50"
-                        max="250"
-                        className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-3 border text-gray-900 bg-gray-50 transition-colors"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">Weight (kg)</label>
-                      <input
-                        type="number"
-                        name="weight"
-                        value={formData.weight}
-                        onChange={handleChange}
-                        min="30"
-                        max="200"
-                        step="0.1"
-                        className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-3 border text-gray-900 bg-gray-50 transition-colors"
-                      />
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {/* Gender */}
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Gender
+                    </label>
+                    <select
+                      name="gender"
+                      value={formData.gender}
+                      onChange={handleChange}
+                      className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2.5 border text-gray-900 bg-gray-50"
+                    >
+                      <option>Female</option>
+                      <option>Male</option>
+                    </select>
+                  </div>
+
+                  {/* Age */}
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Age (years)
+                    </label>
+                    <input
+                      type="number"
+                      name="age"
+                      value={formData.age}
+                      onChange={handleChange}
+                      min="10"
+                      max="100"
+                      className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2.5 border text-gray-900 bg-gray-50"
+                    />
+                  </div>
+
+                  {/* Height */}
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Height (cm)
+                    </label>
+                    <input
+                      type="number"
+                      name="height"
+                      value={formData.height}
+                      onChange={handleChange}
+                      min="50"
+                      max="250"
+                      className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2.5 border text-gray-900 bg-gray-50"
+                    />
+                  </div>
+
+                  {/* Weight */}
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Weight (kg)
+                    </label>
+                    <input
+                      type="number"
+                      name="weight"
+                      value={formData.weight}
+                      onChange={handleChange}
+                      min="30"
+                      max="200"
+                      step="0.1"
+                      className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2.5 border text-gray-900 bg-gray-50"
+                    />
+                  </div>
+
+                  {/* Systolic BP */}
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Systolic BP (ap_hi)
+                    </label>
+                    <input
+                      type="number"
+                      name="ap_hi"
+                      value={formData.ap_hi}
+                      onChange={handleChange}
+                      className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2.5 border text-gray-900 bg-gray-50"
+                    />
+                  </div>
+
+                  {/* Diastolic BP */}
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Diastolic BP (ap_lo)
+                    </label>
+                    <input
+                      type="number"
+                      name="ap_lo"
+                      value={formData.ap_lo}
+                      onChange={handleChange}
+                      className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2.5 border text-gray-900 bg-gray-50"
+                    />
+                  </div>
+
+                  {/* Cholesterol */}
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Cholesterol
+                    </label>
+                    <select
+                      name="cholesterol"
+                      value={formData.cholesterol}
+                      onChange={handleChange}
+                      className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2.5 border text-gray-900 bg-gray-50"
+                    >
+                      <option>Low</option>
+                      <option>Normal</option>
+                      <option>High</option>
+                    </select>
+                  </div>
+
+                  {/* Glucose */}
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Glucose
+                    </label>
+                    <select
+                      name="glucose"
+                      value={formData.glucose}
+                      onChange={handleChange}
+                      className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2.5 border text-gray-900 bg-gray-50"
+                    >
+                      <option>Low</option>
+                      <option>Normal</option>
+                      <option>High</option>
+                    </select>
+                  </div>
+
+                  {/* Smoke */}
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Smoker?
+                    </label>
+                    <div className="flex gap-4 mt-2">
+                      <label className="inline-flex items-center cursor-pointer">
+                        <input
+                          type="radio"
+                          name="smoke"
+                          value="No"
+                          checked={formData.smoke === "No"}
+                          onChange={handleChange}
+                          className="form-radio text-blue-600 w-4 h-4"
+                        />
+                        <span className="ml-2 text-gray-900">No</span>
+                      </label>
+                      <label className="inline-flex items-center cursor-pointer">
+                        <input
+                          type="radio"
+                          name="smoke"
+                          value="Yes"
+                          checked={formData.smoke === "Yes"}
+                          onChange={handleChange}
+                          className="form-radio text-blue-600 w-4 h-4"
+                        />
+                        <span className="ml-2 text-gray-900">Yes</span>
+                      </label>
                     </div>
                   </div>
-                </div>
 
-                {/* Vitals */}
-                <div className="space-y-4">
-                  <h3 className="text-lg font-semibold text-gray-900 border-b pb-2">Medical Vitals</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">Systolic BP (ap_hi)</label>
-                      <input
-                        type="number"
-                        name="ap_hi"
-                        value={formData.ap_hi}
-                        onChange={handleChange}
-                        className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-3 border text-gray-900 bg-gray-50 transition-colors"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">Diastolic BP (ap_lo)</label>
-                      <input
-                        type="number"
-                        name="ap_lo"
-                        value={formData.ap_lo}
-                        onChange={handleChange}
-                        className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-3 border text-gray-900 bg-gray-50 transition-colors"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">Cholesterol</label>
-                      <select
-                        name="cholesterol"
-                        value={formData.cholesterol}
-                        onChange={handleChange}
-                        className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-3 border text-gray-900 bg-gray-50 transition-colors"
-                      >
-                        <option>Low</option>
-                        <option>Normal</option>
-                        <option>High</option>
-                      </select>
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">Glucose</label>
-                      <select
-                        name="glucose"
-                        value={formData.glucose}
-                        onChange={handleChange}
-                        className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-3 border text-gray-900 bg-gray-50 transition-colors"
-                      >
-                        <option>Low</option>
-                        <option>Normal</option>
-                        <option>High</option>
-                      </select>
+                  {/* Alcohol */}
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Alcohol Intake?
+                    </label>
+                    <div className="flex gap-4 mt-2">
+                      <label className="inline-flex items-center cursor-pointer">
+                        <input
+                          type="radio"
+                          name="alco"
+                          value="No"
+                          checked={formData.alco === "No"}
+                          onChange={handleChange}
+                          className="form-radio text-blue-600 w-4 h-4"
+                        />
+                        <span className="ml-2 text-gray-900">No</span>
+                      </label>
+                      <label className="inline-flex items-center cursor-pointer">
+                        <input
+                          type="radio"
+                          name="alco"
+                          value="Yes"
+                          checked={formData.alco === "Yes"}
+                          onChange={handleChange}
+                          className="form-radio text-blue-600 w-4 h-4"
+                        />
+                        <span className="ml-2 text-gray-900">Yes</span>
+                      </label>
                     </div>
                   </div>
-                </div>
 
-                {/* Lifestyle */}
-                <div className="space-y-4">
-                  <h3 className="text-lg font-semibold text-gray-900 border-b pb-2">Lifestyle Factors</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-3">Smoker?</label>
-                      <div className="flex gap-4">
-                        <label className="relative flex-1 cursor-pointer">
-                          <input
-                            type="radio"
-                            name="smoke"
-                            value="No"
-                            checked={formData.smoke === "No"}
-                            onChange={handleChange}
-                            className="peer sr-only"
-                          />
-                          <div className="p-3 text-center rounded-lg border border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-50 peer-checked:text-blue-700 hover:bg-gray-50 transition-all">
-                            No
-                          </div>
-                        </label>
-                        <label className="relative flex-1 cursor-pointer">
-                          <input
-                            type="radio"
-                            name="smoke"
-                            value="Yes"
-                            checked={formData.smoke === "Yes"}
-                            onChange={handleChange}
-                            className="peer sr-only"
-                          />
-                          <div className="p-3 text-center rounded-lg border border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-50 peer-checked:text-blue-700 hover:bg-gray-50 transition-all">
-                            Yes
-                          </div>
-                        </label>
-                      </div>
-                    </div>
-
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-3">Alcohol Intake?</label>
-                      <div className="flex gap-4">
-                        <label className="relative flex-1 cursor-pointer">
-                          <input
-                            type="radio"
-                            name="alco"
-                            value="No"
-                            checked={formData.alco === "No"}
-                            onChange={handleChange}
-                            className="peer sr-only"
-                          />
-                          <div className="p-3 text-center rounded-lg border border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-50 peer-checked:text-blue-700 hover:bg-gray-50 transition-all">
-                            No
-                          </div>
-                        </label>
-                        <label className="relative flex-1 cursor-pointer">
-                          <input
-                            type="radio"
-                            name="alco"
-                            value="Yes"
-                            checked={formData.alco === "Yes"}
-                            onChange={handleChange}
-                            className="peer sr-only"
-                          />
-                          <div className="p-3 text-center rounded-lg border border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-50 peer-checked:text-blue-700 hover:bg-gray-50 transition-all">
-                            Yes
-                          </div>
-                        </label>
-                      </div>
-                    </div>
-
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-3">Physical Activity?</label>
-                      <div className="flex gap-4">
-                        <label className="relative flex-1 cursor-pointer">
-                          <input
-                            type="radio"
-                            name="active"
-                            value="Sedentary"
-                            checked={formData.active === "Sedentary"}
-                            onChange={handleChange}
-                            className="peer sr-only"
-                          />
-                          <div className="p-3 text-center rounded-lg border border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-50 peer-checked:text-blue-700 hover:bg-gray-50 transition-all">
-                            No
-                          </div>
-                        </label>
-                        <label className="relative flex-1 cursor-pointer">
-                          <input
-                            type="radio"
-                            name="active"
-                            value="Active"
-                            checked={formData.active === "Active"}
-                            onChange={handleChange}
-                            className="peer sr-only"
-                          />
-                          <div className="p-3 text-center rounded-lg border border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-50 peer-checked:text-blue-700 hover:bg-gray-50 transition-all">
-                            Yes
-                          </div>
-                        </label>
-                      </div>
+                  {/* Active */}
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Physical Activity?
+                    </label>
+                    <div className="flex gap-4 mt-2">
+                      <label className="inline-flex items-center cursor-pointer">
+                        <input
+                          type="radio"
+                          name="active"
+                          value="Sedentary"
+                          checked={formData.active === "Sedentary"}
+                          onChange={handleChange}
+                          className="form-radio text-blue-600 w-4 h-4"
+                        />
+                        <span className="ml-2 text-gray-900">Sedentary</span>
+                      </label>
+                      <label className="inline-flex items-center cursor-pointer">
+                        <input
+                          type="radio"
+                          name="active"
+                          value="Active"
+                          checked={formData.active === "Active"}
+                          onChange={handleChange}
+                          className="form-radio text-blue-600 w-4 h-4"
+                        />
+                        <span className="ml-2 text-gray-900">Active</span>
+                      </label>
                     </div>
                   </div>
-                </div>
 
-                {/* Model Selection */}
-                <div className="pt-4 border-t">
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Selected Model</label>
-                  <select
-                    name="model_name"
-                    value={formData.model_name}
-                    onChange={handleChange}
-                    className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-3 border text-gray-900 bg-gray-50 transition-colors"
-                  >
-                    <option>XGBoost</option>
-                    <option>Random Forest</option>
-                    <option>Logistic Regression</option>
-                    <option>CatBoost</option>
-                  </select>
-                  <p className="text-xs text-gray-500 mt-1">Select the machine learning algorithm for your prediction.</p>
+                  {/* Model Selection */}
+                  <div className="col-span-1 md:col-span-2">
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Select Model
+                    </label>
+                    <select
+                      name="model_name"
+                      value={formData.model_name}
+                      onChange={handleChange}
+                      className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2.5 border text-gray-900 bg-gray-50"
+                    >
+                      <option>XGBoost</option>
+                      <option>Random Forest</option>
+                      <option>Logistic Regression</option>
+                    </select>
+                  </div>
                 </div>
 
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full relative group overflow-hidden py-4 px-6 bg-gradient-to-r from-[#1a44c9] to-[#122e86] hover:from-[#2a55da] hover:to-[#1a44c9] text-white font-bold rounded-xl shadow-lg hover:shadow-blue-500/30 transition-all transform hover:-translate-y-0.5"
+                  className="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-base font-bold text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:bg-blue-300 transition-colors"
                 >
-                  <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
-                  {loading ? (
-                    <span className="flex items-center justify-center gap-2">
-                      <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                      </svg>
-                      Processing Health Data...
-                    </span>
-                  ) : "Analyze Health Risk"}
+                  {loading ? "Analyzing..." : "Analyze Risk"}
                 </button>
               </form>
 
@@ -689,10 +732,11 @@ export default function Home() {
 
               {result && (
                 <div
-                  className={`mt-8 p-6 rounded-xl text-center border-2 ${result.prediction === 1
-                    ? "bg-red-50 border-red-200 text-red-800"
-                    : "bg-green-50 border-green-200 text-green-800"
-                    }`}
+                  className={`mt-8 p-6 rounded-xl text-center border-2 ${
+                    result.prediction === 1
+                      ? "bg-red-50 border-red-200 text-red-800"
+                      : "bg-green-50 border-green-200 text-green-800"
+                  }`}
                 >
                   <div className="flex justify-center mb-4">
                     {result.prediction === 1 ? (
@@ -886,9 +930,9 @@ export default function Home() {
                 Total Predictions:{" "}
                 {detailedMetrics
                   ? detailedMetrics.confusion_matrix.tn +
-                  detailedMetrics.confusion_matrix.fp +
-                  detailedMetrics.confusion_matrix.fn +
-                  detailedMetrics.confusion_matrix.tp
+                    detailedMetrics.confusion_matrix.fp +
+                    detailedMetrics.confusion_matrix.fn +
+                    detailedMetrics.confusion_matrix.tp
                   : "14,000"}{" "}
                 | Accuracy:{" "}
                 {detailedMetrics
