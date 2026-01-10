@@ -121,9 +121,12 @@ export default function AnalysisPage() {
 
     const trainingHistory = detailedMetrics?.training_history || [
         { name: "Decision Tree", accuracy: 61.69 },
+        { name: "Linear Regression", accuracy: 72.21 },
         { name: "Logistic Regression", accuracy: 71.94 },
         { name: "Random Forest", accuracy: 72.77 },
         { name: "XGBoost", accuracy: 72.53 },
+        { name: "KNN", accuracy: 71.2 },
+        { name: "SVM", accuracy: 72.5 },
         { name: "CatBoost", accuracy: 72.84 },
     ];
 
