@@ -1,6 +1,6 @@
 {
-  "Logistic Regression": 0.71924492081267,
-  "Random Forest": 0.7248440249560071,
-  "XGBoost": 0.7259638457846744,
+  "Logistic Regression": 0.7194048952167653,
+  "Random Forest": 0.7277235642297233,
+  "XGBoost": 0.725323948168293,
   "CatBoost": 0.7283634618461047
 }
