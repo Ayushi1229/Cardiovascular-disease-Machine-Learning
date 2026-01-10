@@ -48,9 +48,13 @@ try:
     for name, filename in model_files.items():
         path = os.path.join(MODELS_DIR, filename)
         if os.path.exists(path):
-            models[name] = joblib.load(path)
+            try:
+                models[name] = joblib.load(path)
+                print(f"✅ Loaded model: {name}")
+            except Exception as model_err:
+                print(f"❌ Error loading model {name} from {path}: {model_err}")
         else:
-            print(f"Warning: Model {name} not found at {path}")
+            print(f"⚠️ Warning: Model {name} not found at {path}")
 
 except Exception as e:
     print(f"Error loading assets: {e}")

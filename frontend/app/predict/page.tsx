@@ -65,11 +65,12 @@ export default function PredictPage() {
                 body: JSON.stringify(payload),
             });
 
+            const data = await response.json().catch(() => ({}));
+
             if (!response.ok) {
-                throw new Error("Failed to fetch prediction");
+                throw new Error(data.detail || "Failed to fetch prediction");
             }
 
-            const data = await response.json();
             setResult(data);
         } catch (err: any) {
             setError(err.message);
