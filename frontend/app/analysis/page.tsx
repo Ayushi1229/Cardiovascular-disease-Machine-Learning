@@ -129,10 +129,10 @@ export default function AnalysisPage() {
                 {/* KPI Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-6xl mx-auto mb-16 px-4">
                     {[
-                        { label: "Accuracy", value: detailedMetrics ? (detailedMetrics.accuracy * 100).toFixed(1) + "%" : "74.0%", icon: <Activity className="w-5 h-5" color="#9333ea" /> },
-                        { label: "Precision", value: detailedMetrics ? (detailedMetrics.precision * 100).toFixed(1) + "%" : "76.0%", icon: <Zap className="w-5 h-5" color="#db2777" /> },
-                        { label: "Recall", value: detailedMetrics ? (detailedMetrics.recall * 100).toFixed(1) + "%" : "70.1%", icon: <BarChartIcon className="w-5 h-5" color="#4f46e5" /> },
-                        { label: "F1 Score", value: detailedMetrics ? detailedMetrics.f1_score.toFixed(3) : "0.730", icon: <Database className="w-5 h-5" color="#059669" /> }
+                        { label: "Accuracy", value: detailedMetrics?.accuracy ? (detailedMetrics.accuracy * 100).toFixed(1) + "%" : "74.0%", icon: <Activity className="w-5 h-5" color="#9333ea" /> },
+                        { label: "Precision", value: detailedMetrics?.precision ? (detailedMetrics.precision * 100).toFixed(1) + "%" : "76.0%", icon: <Zap className="w-5 h-5" color="#db2777" /> },
+                        { label: "Recall", value: detailedMetrics?.recall ? (detailedMetrics.recall * 100).toFixed(1) + "%" : "70.1%", icon: <BarChartIcon className="w-5 h-5" color="#4f46e5" /> },
+                        { label: "F1 Score", value: detailedMetrics?.f1_score ? detailedMetrics.f1_score.toFixed(3) : "0.730", icon: <Database className="w-5 h-5" color="#059669" /> }
                     ].map((kpi, i) => (
                         <div key={i} className="bg-white/80 backdrop-blur-xl p-8 rounded-[32px] border-2 border-purple-100 shadow-xl shadow-purple-100/20 group hover:-translate-y-1 transition-all">
                             <div className="w-12 h-12 rounded-2xl bg-purple-50 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
@@ -246,10 +246,10 @@ export default function AnalysisPage() {
                         </h3>
                         <div className="grid grid-cols-2 gap-6 h-72">
                             {[
-                                { val: detailedMetrics ? detailedMetrics.confusion_matrix.tn : "5454", label: "True Negative", sub: "(Correct: Healthy)", bg: "bg-emerald-50", text: "text-emerald-700", border: "border-emerald-100" },
-                                { val: detailedMetrics ? detailedMetrics.confusion_matrix.fp : "1550", label: "False Positive", sub: "(Error: Risk)", bg: "bg-amber-50", text: "text-amber-700", border: "border-amber-100" },
-                                { val: detailedMetrics ? detailedMetrics.confusion_matrix.fn : "2093", label: "False Negative", sub: "(Error: Healthy)", bg: "bg-rose-50", text: "text-rose-700", border: "border-rose-100" },
-                                { val: detailedMetrics ? detailedMetrics.confusion_matrix.tp : "4903", label: "True Positive", sub: "(Correct: Risk)", bg: "bg-purple-50", text: "text-purple-700", border: "border-purple-100" }
+                                { val: detailedMetrics?.confusion_matrix?.tn ?? "5454", label: "True Negative", sub: "(Correct: Healthy)", bg: "bg-emerald-50", text: "text-emerald-700", border: "border-emerald-100" },
+                                { val: detailedMetrics?.confusion_matrix?.fp ?? "1550", label: "False Positive", sub: "(Error: Risk)", bg: "bg-amber-50", text: "text-amber-700", border: "border-amber-100" },
+                                { val: detailedMetrics?.confusion_matrix?.fn ?? "2093", label: "False Negative", sub: "(Error: Healthy)", bg: "bg-rose-50", text: "text-rose-700", border: "border-rose-100" },
+                                { val: detailedMetrics?.confusion_matrix?.tp ?? "4903", label: "True Positive", sub: "(Correct: Risk)", bg: "bg-purple-50", text: "text-purple-700", border: "border-purple-100" }
                             ].map((box, i) => (
                                 <div key={i} className={`${box.bg} ${box.border} border-2 p-5 rounded-3xl flex flex-col items-center justify-center text-center transition-all hover:scale-[1.02] cursor-default`}>
                                     <div className={`text-3xl font-black ${box.text} mb-1`}>{box.val}</div>
