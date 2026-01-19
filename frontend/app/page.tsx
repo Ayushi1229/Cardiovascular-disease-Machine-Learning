@@ -78,7 +78,7 @@ export default function Home() {
                   <div className="text-4xl font-black text-purple-900 mb-1">
                     {detailedMetrics
                       ? (detailedMetrics.accuracy * 100).toFixed(1) + "%"
-                      : "74.0%"}
+                      : "73.0%"}
                   </div>
                   <div className="text-purple-700/70 text-xs font-bold uppercase tracking-widest">Model Accuracy</div>
                 </div>
